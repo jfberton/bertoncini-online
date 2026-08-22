@@ -943,83 +943,132 @@ window.resetFilters = function() {
 };
 
 // ==========================================
-// 10. CART DRAWER RENDER
+// 10. CART DRAWER CONTROLLER & 2-STEP FLOW
 // ==========================================
+window.goToCheckoutStep = function(step) {
+  if (step === 2 && state.cart.length === 0) {
+    showToast('⚠️ Agregá al menos un artículo para solicitar cotización');
+    return;
+  }
+
+  state.cartStep = step;
+  const step1 = document.getElementById('cart-step-1');
+  const step2 = document.getElementById('cart-step-2');
+  const title = document.getElementById('cart-header-title');
+  const totalUnits = state.cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  if (step === 2) {
+    if (step1) step1.classList.add('hidden');
+    if (step2) step2.classList.remove('hidden');
+    if (title) title.textContent = 'FINALIZAR COTIZACIÓN';
+    const summaryEl = document.getElementById('cart-step-2-summary');
+    if (summaryEl) summaryEl.textContent = `${totalUnits} ${totalUnits === 1 ? 'artículo' : 'artículos'}`;
+    setTimeout(() => {
+      document.getElementById('checkout-name')?.focus();
+    }, 100);
+  } else {
+    if (step1) step1.classList.remove('hidden');
+    if (step2) step2.classList.add('hidden');
+    if (title) title.textContent = 'MI PEDIDO';
+  }
+};
+
 function renderCartDrawer() {
   const container = document.getElementById('cart-items-container');
   const emptyState = document.getElementById('cart-empty-state');
-  const footer = document.getElementById('cart-drawer-footer');
+  const step1 = document.getElementById('cart-step-1');
+  const step2 = document.getElementById('cart-step-2');
+  const step1Summary = document.getElementById('cart-step-1-summary');
+  const cartItemCount = document.getElementById('cart-drawer-item-count');
+
   if (!container) return;
+
+  const totalUnits = state.cart.reduce((sum, item) => sum + item.quantity, 0);
+  if (cartItemCount) {
+    cartItemCount.textContent = `${totalUnits} ${totalUnits === 1 ? 'artículo' : 'artículos'}`;
+  }
 
   if (state.cart.length === 0) {
     if (container) container.innerHTML = '';
     if (emptyState) emptyState.classList.remove('hidden');
-    if (footer) footer.classList.add('hidden');
+    if (step1) step1.classList.add('hidden');
+    if (step2) step2.classList.add('hidden');
     return;
   }
 
   if (emptyState) emptyState.classList.add('hidden');
-  if (footer) footer.classList.remove('hidden');
+  
+  // If not currently in step 2, show step 1
+  if (state.cartStep === 2) {
+    if (step1) step1.classList.add('hidden');
+    if (step2) step2.classList.remove('hidden');
+  } else {
+    if (step1) step1.classList.remove('hidden');
+    if (step2) step2.classList.add('hidden');
+  }
+
+  if (step1Summary) {
+    step1Summary.textContent = `${totalUnits} ${totalUnits === 1 ? 'artículo' : 'artículos'} (${state.cart.length} líneas)`;
+  }
 
   let html = '';
-  state.cart.forEach(item => {
+  state.cart.forEach((item, idx) => {
     html += `
-      <div class="p-3.5 bg-zinc-100 dark:bg-zinc-800/90 border border-zinc-200 dark:border-zinc-700/80 rounded-xl space-y-2.5 group relative shadow-sm">
+      <div class="p-2.5 bg-zinc-100 dark:bg-[#161A20] border border-zinc-200 dark:border-zinc-800 rounded-2xl flex flex-col gap-2 group shadow-sm transition-all">
         
-        <div class="flex gap-3 items-start">
+        <!-- Main Row: Thumbnail + Info + Quantity Controls -->
+        <div class="flex items-center gap-2.5">
+          
+          <!-- Compact Thumbnail -->
           <img 
             src="${escapeHtml(item.image)}" 
             alt="${escapeHtml(item.name)}" 
-            class="w-14 h-14 rounded-lg object-contain bg-white dark:bg-zinc-950 p-1 border border-zinc-300 dark:border-zinc-700 shrink-0"
-            onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=200&q=80'"
+            class="w-11 h-11 rounded-xl object-contain bg-white dark:bg-zinc-950 p-1 border border-zinc-200 dark:border-zinc-800 shrink-0"
+            onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=150&q=80'"
           />
+
+          <!-- Item Details -->
           <div class="flex-1 min-w-0">
-            <div class="flex items-start justify-between gap-1">
-              <h4 class="text-xs font-bold text-zinc-900 dark:text-white leading-tight">${escapeHtml(item.name)}</h4>
-              <button onclick="removeFromCart('${item.cartKey}')" class="text-zinc-400 hover:text-red-500 transition-colors p-1" title="Eliminar artículo">
-                <i data-lucide="trash-2" class="w-4 h-4"></i>
-              </button>
-            </div>
+            <h4 class="text-xs font-bold text-zinc-900 dark:text-white leading-tight truncate" title="${escapeHtml(item.name)}">
+              ${escapeHtml(item.name)}
+            </h4>
             
-            <div class="flex items-center gap-2 mt-1 flex-wrap">
-              <span class="text-[10px] font-mono text-yellow-700 dark:text-yellow-400 bg-yellow-400/10 px-1.5 py-0.5 rounded border border-yellow-400/30">
+            <div class="flex items-center gap-1.5 mt-1 flex-wrap">
+              <span class="text-[9px] font-mono text-yellow-700 dark:text-yellow-400 bg-yellow-400/10 px-1 py-0.2 rounded border border-yellow-400/20">
                 SKU: ${escapeHtml(item.sku)}
               </span>
               ${item.selectedVariant ? `
-                <span class="text-[10px] text-zinc-700 dark:text-zinc-200 bg-zinc-200 dark:bg-zinc-700 px-1.5 py-0.5 rounded font-medium">
-                  Medida: ${escapeHtml(item.selectedVariant)}
+                <span class="text-[9px] text-zinc-700 dark:text-zinc-300 bg-zinc-200 dark:bg-zinc-800 px-1 py-0.2 rounded font-medium truncate max-w-[120px]">
+                  ${escapeHtml(item.selectedVariant)}
                 </span>
               ` : ''}
             </div>
           </div>
+
+          <!-- Quantity Stepper -->
+          <div class="flex items-center bg-white dark:bg-zinc-900 rounded-lg border border-zinc-300 dark:border-zinc-700 shrink-0">
+            <button onclick="updateCartQuantity('${item.cartKey}', ${item.quantity - 1})" class="w-6 h-7 text-xs text-zinc-500 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 flex items-center justify-center transition-colors font-bold">-</button>
+            <span class="px-1.5 text-xs font-bold text-zinc-900 dark:text-white min-w-[20px] text-center">${item.quantity}</span>
+            <button onclick="updateCartQuantity('${item.cartKey}', ${item.quantity + 1})" class="w-6 h-7 text-xs text-zinc-500 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 flex items-center justify-center transition-colors font-bold">+</button>
+          </div>
+
+          <!-- Trash Button -->
+          <button onclick="removeFromCart('${item.cartKey}')" class="text-zinc-400 hover:text-red-500 p-1 shrink-0 transition-colors" title="Eliminar">
+            <i data-lucide="trash-2" class="w-4 h-4"></i>
+          </button>
+
         </div>
 
-        <!-- Cut / Observation Box -->
-        <div class="bg-white dark:bg-zinc-900/90 p-2.5 rounded-lg border border-zinc-200 dark:border-zinc-700/60">
-          <div class="flex items-center justify-between mb-1">
-            <label class="text-[10px] font-bold text-yellow-700 dark:text-yellow-400 uppercase tracking-wider flex items-center gap-1">
-              <i data-lucide="scissors" class="w-3 h-3"></i>
-              <span>Corte / Medida / Observación:</span>
-            </label>
-            <span class="text-[9px] text-zinc-400">Editable</span>
-          </div>
+        <!-- Compact Optional Cut / Observation Input -->
+        <div class="pt-1.5 border-t border-zinc-200/60 dark:border-zinc-800 flex items-center gap-1.5 text-[11px]">
+          <span class="text-yellow-600 dark:text-yellow-400 font-bold shrink-0 text-[10px]">✂️ Obs:</span>
           <input 
             type="text" 
             value="${escapeHtml(item.note || '')}" 
-            placeholder="Ej: Cortar a 1.20 x 2.40 mts / Fraccionar..." 
+            placeholder="Corte o nota para este ítem (opcional)..." 
             onchange="updateItemNote('${item.cartKey}', this.value)" 
-            class="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 focus:border-yellow-400 text-xs text-zinc-900 dark:text-zinc-200 placeholder-zinc-400 dark:placeholder-zinc-500 rounded px-2.5 py-1.5 focus:outline-none transition-colors"
+            class="flex-1 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 focus:border-yellow-400 text-[11px] text-zinc-800 dark:text-zinc-200 placeholder-zinc-400 dark:placeholder-zinc-600 rounded-lg px-2 py-1 focus:outline-none transition-colors"
           />
-        </div>
-
-        <!-- Quantity & Controls -->
-        <div class="flex items-center justify-between pt-1 border-t border-zinc-200 dark:border-zinc-700/50">
-          <span class="text-[11px] text-zinc-500 dark:text-zinc-400">Cantidad solicitada:</span>
-          <div class="flex items-center bg-white dark:bg-zinc-900 rounded border border-zinc-300 dark:border-zinc-700">
-            <button onclick="updateCartQuantity('${item.cartKey}', ${item.quantity - 1})" class="px-2.5 py-1 text-xs text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white">-</button>
-            <span class="px-2 text-xs font-bold text-zinc-900 dark:text-white min-w-[24px] text-center">${item.quantity} u.</span>
-            <button onclick="updateCartQuantity('${item.cartKey}', ${item.quantity + 1})" class="px-2.5 py-1 text-xs text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white">+</button>
-          </div>
         </div>
 
       </div>
@@ -1219,10 +1268,7 @@ window.submitOrderToWhatsApp = function() {
   }
 
   const name = (document.getElementById('checkout-name')?.value || '').trim();
-  const phone = (document.getElementById('checkout-phone')?.value || '').trim();
-  const cuit = (document.getElementById('checkout-cuit')?.value || '').trim();
-  const deliveryType = document.getElementById('checkout-delivery')?.value || 'Retiro en Local';
-  const address = (document.getElementById('checkout-address')?.value || '').trim();
+  const deliveryType = document.getElementById('checkout-delivery')?.value || 'Retiro en Local (Resistencia)';
   const notes = (document.getElementById('checkout-notes')?.value || '').trim();
 
   if (!name) {
@@ -1231,22 +1277,21 @@ window.submitOrderToWhatsApp = function() {
     return;
   }
 
+  const totalUnits = state.cart.reduce((sum, item) => sum + item.quantity, 0);
+
   let msg = `🏗️ *NUEVO PEDIDO / COTIZACIÓN - BERTONCINI*\n`;
   msg += `==================================\n`;
   msg += `👤 *Cliente:* ${name}\n`;
-  if (phone) msg += `📱 *Teléfono:* ${phone}\n`;
-  if (cuit) msg += `🏢 *CUIT / DNI:* ${cuit}\n`;
-  msg += `📍 *Modalidad:* ${deliveryType}\n`;
-  if (address) msg += `🏠 *Dirección/Destino:* ${address}\n`;
-  if (notes) msg += `📝 *Observaciones Generales:* ${notes}\n`;
+  msg += `📍 *Entrega:* ${deliveryType}\n`;
+  if (notes) msg += `📝 *Aclaraciones:* ${notes}\n`;
   msg += `==================================\n`;
-  msg += `📦 *DETALLE DE ARTÍCULOS (${state.cart.length} ítems):*\n\n`;
+  msg += `📦 *DETALLE DEL PEDIDO (${totalUnits} artículos / ${state.cart.length} líneas):*\n\n`;
 
   state.cart.forEach((item, index) => {
     msg += `${index + 1}️⃣ *${item.name}*\n`;
     msg += `   ▫️ *SKU:* \`${item.sku}\`\n`;
     if (item.selectedVariant) {
-      msg += `   ▫️ *Medida/Variante:* ${item.selectedVariant}\n`;
+      msg += `   ▫️ *Medida:* ${item.selectedVariant}\n`;
     }
     if (item.note && item.note.trim()) {
       msg += `   ✂️ *Corte / Obs:* ${item.note.trim()}\n`;
@@ -1255,15 +1300,16 @@ window.submitOrderToWhatsApp = function() {
   });
 
   msg += `==================================\n`;
-  msg += `💬 _Pedido generado desde el Catálogo Online Bertoncini_`;
+  msg += `💬 _Enviado desde el Catálogo Online Bertoncini_`;
 
   Analytics.trackWhatsAppOrder(state.cart.length);
 
   const url = `https://wa.me/${CONFIG.WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
   window.open(url, '_blank');
   
-  showToast('🚀 Pedido generado con éxito! Abriendo WhatsApp...');
+  showToast('🚀 Abriendo WhatsApp con tu pedido...');
 };
+
 
 // ==========================================
 // 13. PRINT / PDF SLIP GENERATOR
@@ -1559,6 +1605,7 @@ window.toggleCartDrawer = function() {
     backdrop.classList.add('opacity-0', 'pointer-events-none');
     document.body.classList.remove('overflow-hidden');
   } else {
+    state.cartStep = 1;
     renderCartDrawer();
     drawer.classList.remove('translate-x-full');
     backdrop.classList.remove('opacity-0', 'pointer-events-none');
