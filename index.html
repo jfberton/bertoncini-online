@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bertoncini | Herramientas, Ferretería Industrial & Tienda Oficial Mercado Libre</title>
+  <meta name="description" content="Catálogo online de Ferretería Industrial, Herramientas, Acero y Suministros en Resistencia, Chaco. Más de 1.100 artículos en stock y Tienda Oficial en Mercado Libre.">
+  
+  <!-- Favicon / Brand Tab Icon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="alternate icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+  <meta name="theme-color" content="#FFC107">
+  
+  <!-- Modern Industrial Google Fonts: Outfit (Headings) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              yellow: '#FFC107',
+              yellowHover: '#E5AC00',
+              yellowLight: '#FFF8E1',
+              dark: '#0F1216',
+              darker: '#090B0D',
+              card: '#161A20',
+              border: '#232A34',
+              accent: '#FFA000'
+            },
+            ml: {
+              yellow: '#FFE600',
+              yellowDark: '#E5CF00',
+              blue: '#2968C8',
+              navy: '#1B3B6F'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+            heading: ['Outfit', '"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-[#F8FAFC] dark:bg-[#0D0F12] text-zinc-800 dark:text-zinc-100 font-sans antialiased selection:bg-yellow-400 selection:text-black transition-colors duration-300">
+
+  <!-- ================= TOP CONTACT, SOCIAL & SISTER SITE BAR ================= -->
+  <div class="bg-zinc-950 text-zinc-300 text-xs py-2 px-4 border-b border-zinc-800/80">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-2.5">
+      
+      <!-- Left: Location & Hours -->
+      <div class="flex items-center gap-3 sm:gap-4 flex-wrap justify-center text-[11px] sm:text-xs">
+        <span class="flex items-center gap-1.5 text-zinc-200">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-yellow-400"></i>
+          <span>Santiago del Estero 2415 (Ruta 11), Resistencia - Chaco</span>
+        </span>
+        <span class="hidden md:inline-block text-zinc-700">•</span>
+        <span class="flex items-center gap-1.5 text-zinc-300">
+          <i data-lucide="clock" class="w-3.5 h-3.5 text-yellow-400"></i>
+          <span>Lun a Vie: 8:00 a 12:00 / 15:00 a 19:00 | Sáb: 8:00 a 12:00</span>
+        </span>
+      </div>
+
+      <!-- Right: Sister Website & Social Networks -->
+      <div class="flex items-center gap-3 sm:gap-4 flex-wrap justify-center text-[11px]">
+        
+        <!-- Sister Cranes Site Link -->
+        <a 
+          href="https://bertoncinigruas.com.ar/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-zinc-800 hover:bg-yellow-400 hover:text-black text-zinc-200 transition-all font-semibold border border-zinc-700 group"
+          title="Sitio oficial de Grúas, Carretones y Servicios Viales"
+        >
+          <i data-lucide="truck" class="w-3 h-3 text-yellow-400 group-hover:text-black"></i>
+          <span>División Grúas &amp; Carretones</span>
+          <i data-lucide="external-link" class="w-2.5 h-2.5 opacity-60"></i>
+        </a>
+
+        <!-- Social Icons -->
+        <div class="flex items-center gap-2">
+          <!-- Email -->
+          <a 
+            href="mailto:ventas@bertoncinionline.com.ar" 
+            class="p-1.5 rounded-md bg-zinc-900 hover:bg-yellow-400 text-zinc-300 hover:text-black transition-colors flex items-center justify-center"
+            title="Enviar correo a ventas@bertoncinionline.com.ar"
+          >
+            <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+          </a>
+          <!-- Facebook -->
+          <a 
+            href="https://www.facebook.com/BertonciniResistencia/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="p-1.5 rounded-md bg-zinc-900 hover:bg-[#1877F2] text-zinc-300 hover:text-white transition-colors flex items-center justify-center"
+            title="Seguinos en Facebook"
+          >
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a 
+            href="https://www.instagram.com/bertonciniresistencia/?hl=es-la" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="p-1.5 rounded-md bg-zinc-900 hover:bg-[#E4405F] text-zinc-300 hover:text-white transition-colors flex items-center justify-center"
+            title="Seguinos en Instagram"
+          >
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <!-- WhatsApp -->
+          <a 
+            href="https://wa.me/5493624537266?text=Hola%20Bertoncini!%20Necesito%20hacer%20una%20consulta" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="flex items-center gap-1 text-yellow-400 font-bold hover:underline pl-1"
+          >
+            <i data-lucide="phone-call" class="w-3.5 h-3.5"></i>
+            <span>3624-537266</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#0F1216]/95 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800/80 shadow-md dark:shadow-2xl transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        
+        <!-- Official Logo (Dynamic Light / Dark) - 15% Larger -->
+        <a href="#inicio" class="flex items-center gap-3 group shrink-0 py-1" title="Bertoncini - Inicio">
+          <img 
+            src="assets/images/logo-light.png" 
+            alt="Bertoncini - Grúas, Carretones, Aceros" 
+            class="h-11 sm:h-14 w-auto object-contain block dark:hidden group-hover:scale-105 transition-transform"
+          />
+          <img 
+            src="assets/images/logo-dark.png" 
+            alt="Bertoncini - Grúas, Carretones, Aceros" 
+            class="h-11 sm:h-14 w-auto object-contain hidden dark:block group-hover:scale-105 transition-transform"
+          />
+        </a>
+
+        <!-- Desktop Quick Search Bar (Expanded) -->
+        <div class="hidden md:flex flex-1 max-w-xl mx-4 lg:mx-6">
+          <div class="relative w-full">
+            <input 
+              type="text" 
+              id="header-search-input" 
+              placeholder="Buscar por código SKU, nombre o marca..." 
+              class="w-full bg-zinc-100 dark:bg-zinc-900/90 border border-zinc-300 dark:border-zinc-700/80 text-sm text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500 rounded-2xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all font-medium"
+            >
+            <i data-lucide="search" class="w-4 h-4 text-zinc-400 absolute left-3.5 top-3.5"></i>
+          </div>
+        </div>
+
+        <!-- Navigation Links, Socials & Actions -->
+        <div class="flex items-center gap-3 sm:gap-4">
+          
+          <nav class="hidden lg:flex items-center gap-5 text-sm font-semibold">
+            <!-- Catalog Link -->
+            <a href="#catalogo" class="text-yellow-600 dark:text-yellow-400 hover:underline flex items-center gap-1.5 font-bold">
+              <span>Catálogo</span>
+              <span class="px-1.5 py-0.5 bg-yellow-400/20 text-yellow-700 dark:text-yellow-400 text-[10px] rounded-full total-products-count font-mono font-bold">1.137</span>
+            </a>
+
+            <!-- Sister Cranes Site -->
+            <a 
+              href="https://bertoncinigruas.com.ar/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="text-zinc-600 dark:text-zinc-300 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors flex items-center gap-1"
+              title="Ir a bertoncinigruas.com.ar"
+            >
+              <span>Grúas &amp; Carretones</span>
+              <i data-lucide="external-link" class="w-3 h-3 opacity-60"></i>
+            </a>
+
+            <a href="#contacto" class="text-zinc-600 dark:text-zinc-300 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">Contacto</a>
+          </nav>
+
+          <!-- Light / Dark Theme Switcher Button (Icon only) -->
+          <button 
+            onclick="toggleTheme()" 
+            class="p-2.5 rounded-2xl bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-yellow-400 hover:bg-zinc-200 dark:hover:bg-zinc-700 border border-zinc-300 dark:border-zinc-700 transition-all cursor-pointer flex items-center justify-center shadow-sm"
+            title="Cambiar tema Claro / Oscuro"
+          >
+            <i data-lucide="sun" class="theme-toggle-icon w-4 h-4"></i>
+          </button>
+
+          <!-- Cart Button -->
+          <button 
+            onclick="toggleCartDrawer()" 
+            class="cart-btn-indicator relative flex items-center gap-2 px-4 py-2.5 bg-yellow-400 hover:bg-yellow-500 text-black font-extrabold rounded-2xl transition-all shadow-lg shadow-yellow-400/20 active:scale-95 cursor-pointer">
+            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+            <span class="hidden sm:inline text-xs uppercase tracking-wider">Mi Pedido</span>
+            <span class="cart-badge-count hidden px-2 py-0.5 bg-black text-yellow-400 text-xs font-black rounded-full font-mono">
+              0
+            </span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO LANDING SECTION ================= -->
+  <section id="inicio" class="relative bg-gradient-to-b from-white via-zinc-50 to-zinc-100 dark:from-[#0F1216] dark:via-[#0C0E11] dark:to-[#0D0F12] pt-12 pb-16 overflow-hidden border-b border-zinc-200 dark:border-zinc-800/80">
+    <div class="absolute inset-0 industrial-stripe-subtle pointer-events-none opacity-40"></div>
+    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-yellow-400/10 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Copy -->
+        <div class="lg:col-span-7 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-yellow-400/20 border border-yellow-400/40 text-yellow-800 dark:text-yellow-400 text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
+            Resistencia, Chaco &bull; Envíos a todo el País
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-zinc-900 dark:text-white leading-[1.05] tracking-tight mb-6">
+            CATÁLOGO OFICIAL &bull; <br>
+            <span class="text-yellow-600 dark:text-yellow-400 underline decoration-zinc-300 dark:decoration-zinc-700 decoration-4 underline-offset-8">
+              HERRAMIENTAS &amp; ACERO
+            </span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed mb-8">
+            Más de <strong>1.100 artículos en stock permanente</strong> para ferreterías, talleres, industrias y particulares. Armá tu pedido por WhatsApp o comprá en nuestra <strong>Tienda Oficial de Mercado Libre</strong>.
+          </p>
+
+          <!-- Action CTAs -->
+          <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+            <a href="#catalogo" class="w-full sm:w-auto px-7 py-4 bg-yellow-400 hover:bg-yellow-500 text-black font-extrabold text-xs uppercase tracking-wider rounded-2xl transition-all shadow-xl shadow-yellow-400/20 flex items-center justify-center gap-2 active:scale-95">
+              <i data-lucide="package-search" class="w-5 h-5"></i>
+              <span>Ver Catálogo (1.137 Artículos)</span>
+            </a>
+            <button onclick="openMercadoLibreBanner()" class="w-full sm:w-auto px-7 py-4 bg-[#FFE600] hover:bg-[#E5CF00] text-zinc-950 font-extrabold text-xs uppercase tracking-wider rounded-2xl border border-yellow-500/50 transition-all flex items-center justify-center gap-2.5 shadow-lg active:scale-95">
+              <img src="assets/images/mercadolibre-handshake.png" alt="ML" class="w-5 h-5 object-contain">
+              <span>Tienda Oficial Mercado Libre</span>
+            </button>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10 pt-8 border-t border-zinc-200 dark:border-zinc-800">
+            <div>
+              <div class="font-heading font-black text-2xl sm:text-3xl text-yellow-600 dark:text-yellow-400 total-products-count">1.137+</div>
+              <div class="text-xs text-zinc-500 dark:text-zinc-400 font-medium">Artículos en Stock</div>
+            </div>
+            <div>
+              <div class="font-heading font-black text-2xl sm:text-3xl text-zinc-900 dark:text-white">40+</div>
+              <div class="text-xs text-zinc-500 dark:text-zinc-400 font-medium">Años de Trayectoria</div>
+            </div>
+            <div>
+              <div class="font-heading font-black text-2xl sm:text-3xl text-yellow-600 dark:text-yellow-400">100%</div>
+              <div class="text-xs text-zinc-500 dark:text-zinc-400 font-medium">Calificaciones Positivas</div>
+            </div>
+            <div>
+              <div class="font-heading font-black text-2xl sm:text-3xl text-zinc-900 dark:text-white">Todo el País</div>
+              <div class="text-xs text-zinc-500 dark:text-zinc-400 font-medium">Mercado Envíos &amp; Expresos</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Quick Channels Card -->
+        <div class="lg:col-span-5">
+          <div class="bg-white dark:bg-zinc-900/95 border-2 border-yellow-400/30 rounded-3xl p-6 sm:p-7 shadow-xl dark:shadow-2xl space-y-4">
+            
+            <div class="flex items-center justify-between pb-3 border-b border-zinc-200 dark:border-zinc-800">
+              <span class="text-xs font-mono font-bold text-yellow-700 dark:text-yellow-400 uppercase">Canales Oficiales de Compra</span>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-black uppercase">Activo 24/7</span>
+            </div>
+
+            <!-- Option 1: WhatsApp -->
+            <div class="p-3.5 rounded-2xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-start gap-3.5">
+              <div class="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 shrink-0">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-zinc-900 dark:text-white">Venta Directa &bull; WhatsApp Mostrador</h4>
+                <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">Armá tu pedido acá con cortes, medidas o SKUs y cotizalo al instante con nuestro equipo comercial.</p>
+              </div>
+            </div>
+
+            <!-- Option 2: Mercado Libre -->
+            <div class="p-3.5 rounded-2xl bg-[#FFE600]/10 border border-[#FFE600]/30 flex items-start gap-3.5">
+              <div class="p-2.5 rounded-xl bg-[#FFE600] text-black shrink-0 font-bold">
+                <img src="assets/images/mercadolibre-handshake.png" alt="ML" class="w-5 h-5 object-contain">
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-zinc-900 dark:text-white">Tienda Oficial en Mercado Libre</h4>
+                <p class="text-[11px] text-zinc-600 dark:text-zinc-400 mt-0.5">Comprá con cuotas, tarjeta de crédito y recibí en tu puerta con Mercado Envíos a todo el país.</p>
+              </div>
+            </div>
+
+            <!-- Option 3: Sister Cranes Site -->
+            <a 
+              href="https://bertoncinigruas.com.ar/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="p-3.5 rounded-2xl bg-zinc-100 dark:bg-zinc-800/60 border border-zinc-200 dark:border-zinc-700/80 flex items-center justify-between hover:border-yellow-400 transition-all group"
+            >
+              <div class="flex items-center gap-3">
+                <div class="p-2 rounded-xl bg-zinc-900 dark:bg-zinc-700 text-yellow-400 shrink-0">
+                  <i data-lucide="truck" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-zinc-900 dark:text-white group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors">¿Buscás Grúas y Carretones?</h4>
+                  <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Visitá <strong>bertoncinigruas.com.ar</strong></p>
+                </div>
+              </div>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-400 group-hover:text-yellow-400 group-hover:translate-x-1 transition-all"></i>
+            </a>
+
+            <a href="#catalogo" class="block w-full py-3 text-center bg-zinc-900 dark:bg-zinc-800 hover:bg-yellow-400 hover:text-black text-white font-bold text-xs uppercase tracking-wider rounded-2xl transition-all border border-zinc-700">
+              Explorar Catálogo y Armar Pedido &rarr;
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TWO DIVISIONS HIGHLIGHT BANNER ================= -->
+  <section class="py-6 bg-zinc-900 dark:bg-zinc-950 text-white border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+        
+        <!-- Division 1: Hardware & Tools -->
+        <div class="p-4 rounded-2xl bg-zinc-800/80 border border-yellow-400/40 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-yellow-400 text-black flex items-center justify-center font-black text-lg shrink-0">
+            <i data-lucide="wrench" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <span class="text-[10px] uppercase font-bold tracking-widest text-yellow-400">División Ferretería Industrial</span>
+            <h3 class="text-sm sm:text-base font-heading font-black text-white">Herramientas, Insumos &amp; Acero</h3>
+            <p class="text-xs text-zinc-400">1.137 artículos con cotización por WhatsApp y Mercado Libre.</p>
+          </div>
+        </div>
+
+        <!-- Division 2: Cranes & Heavy Transport -->
+        <a 
+          href="https://bertoncinigruas.com.ar/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="p-4 rounded-2xl bg-zinc-800/50 border border-zinc-700 hover:border-yellow-400 flex items-center justify-between gap-4 transition-all group"
+        >
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-zinc-700 group-hover:bg-yellow-400 group-hover:text-black text-yellow-400 flex items-center justify-center font-black text-lg shrink-0 transition-colors">
+              <i data-lucide="truck" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <span class="text-[10px] uppercase font-bold tracking-widest text-zinc-400 group-hover:text-yellow-400 transition-colors">División Servicios Pesados</span>
+              <h3 class="text-sm sm:text-base font-heading font-black text-white">Grúas, Carretones &amp; Montajes</h3>
+              <p class="text-xs text-zinc-400">Equipos de gran porte en <strong>bertoncinigruas.com.ar</strong></p>
+            </div>
+          </div>
+          <div class="p-2 rounded-xl bg-zinc-700 group-hover:bg-yellow-400 group-hover:text-black text-zinc-300 transition-colors">
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROMINENT MERCADO LIBRE SHOWCASE BANNER ================= -->
+  <section id="mercadolibre" class="py-12 bg-gradient-to-r from-[#FFF59D] via-[#FFE600] to-[#FFD54F] dark:from-[#242200] dark:via-[#1A1E24] dark:to-[#0F1216] border-y border-yellow-400/40 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md rounded-3xl border-2 border-yellow-400 p-6 sm:p-10 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+        
+        <!-- ML Info -->
+        <div class="space-y-4 max-w-2xl text-center lg:text-left">
+          
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFE600] text-zinc-950 text-xs font-black uppercase tracking-wider shadow-sm border border-yellow-500">
+              <img src="assets/images/mercadolibre-handshake.png" alt="Mercado Libre" class="w-4 h-4 object-contain">
+              <span>Tienda Oficial Mercado Libre</span>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-blue-600/10 text-blue-600 dark:text-yellow-400 text-xs font-mono font-bold">
+              HIGINIOBERTONCINIYCIASA
+            </span>
+          </div>
+
+          <div class="pt-1">
+            <img src="assets/images/mercadolibre-official.png" alt="Mercado Libre" class="h-10 sm:h-12 object-contain mx-auto lg:mx-0 drop-shadow-sm">
+          </div>
+
+          <h2 class="text-2xl sm:text-4xl font-heading font-black text-zinc-900 dark:text-white tracking-tight">
+            ¡ENCONTRANOS TAMBIÉN EN MERCADO LIBRE!
+          </h2>
+
+          <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
+            Encontrá herramientas manuales, eléctricas, accesorios y consumibles con la seguridad de Mercado Libre: <strong>pagá en cuotas con Mercado Pago y recibí tus compras con Mercado Envíos en todo el país</strong>.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs font-semibold text-zinc-700 dark:text-zinc-300">
+            <div class="flex items-center gap-2 justify-center lg:justify-start">
+              <i data-lucide="truck" class="w-4 h-4 text-blue-600 dark:text-yellow-400"></i>
+              <span>Mercado Envíos a todo el país</span>
+            </div>
+            <div class="flex items-center gap-2 justify-center lg:justify-start">
+              <i data-lucide="credit-card" class="w-4 h-4 text-blue-600 dark:text-yellow-400"></i>
+              <span>Cuotas con Mercado Pago</span>
+            </div>
+            <div class="flex items-center gap-2 justify-center lg:justify-start">
+              <i data-lucide="shield-check" class="w-4 h-4 text-blue-600 dark:text-yellow-400"></i>
+              <span>Compra 100% Protegida</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ML Action Button -->
+        <div class="shrink-0 w-full lg:w-auto text-center">
+          <button 
+            onclick="openMercadoLibreBanner()" 
+            class="w-full sm:w-auto px-8 py-5 bg-[#FFE600] hover:bg-[#E5CF00] text-zinc-950 font-black text-sm uppercase tracking-wider rounded-2xl transition-all shadow-xl shadow-yellow-500/30 flex items-center justify-center gap-3 border-2 border-yellow-500 active:scale-95 group">
+            <img src="assets/images/mercadolibre-handshake.png" alt="Mercado Libre" class="w-7 h-7 object-contain group-hover:scale-110 transition-transform">
+            <div class="text-left">
+              <div class="text-[10px] font-bold uppercase tracking-widest text-zinc-800">Visitar Tienda Oficial</div>
+              <div class="text-base font-black">HIGINIOBERTONCINIYCIASA &rarr;</div>
+            </div>
+          </button>
+          <span class="block text-[11px] text-zinc-500 dark:text-zinc-400 mt-2">Vendedor Oficial Verificado en Mercado Libre Argentina</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FEATURED BRANDS ================= -->
+  <section class="py-10 bg-zinc-50 dark:bg-[#0A0C0F] border-b border-zinc-200 dark:border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-7">
+        <span class="text-xs uppercase font-black tracking-widest text-yellow-700 dark:text-yellow-500">Marcas Premium &bull; Distribuidor Oficial</span>
+        <h3 class="text-2xl sm:text-3xl font-heading font-black text-zinc-900 dark:text-white mt-1 tracking-tight">
+          MARCAS LÍDERES EN EL CATÁLOGO
+        </h3>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Hacé clic en una marca para ver todos sus productos en el catálogo</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
+        
+        <!-- ===== LUSQTOFF ===== -->
+        <button
+          onclick="selectBrand('Lusqtoff')"
+          class="group relative overflow-hidden bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 hover:border-yellow-400 rounded-3xl text-left transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-yellow-400/15 active:scale-[0.98] flex flex-col min-h-[220px]"
+        >
+          <!-- Full-width logo panel (Light/Dark adaptive) -->
+          <div class="h-28 flex items-center justify-center bg-zinc-50 dark:bg-zinc-950 rounded-t-3xl px-5 py-4 border-b border-zinc-200 dark:border-zinc-800 group-hover:bg-yellow-50 dark:group-hover:bg-zinc-900 transition-colors">
+            <!-- Light mode version (black text vector SVG) -->
+            <img 
+              src="assets/images/logo-lusqtoff-black.svg" 
+              alt="Lusqtoff" 
+              class="max-h-12 w-auto object-contain block dark:hidden group-hover:scale-105 transition-transform duration-300 drop-shadow-sm"
+            >
+            <!-- Dark mode version (white text vector SVG) -->
+            <img 
+              src="assets/images/logo-lusqtoff.svg" 
+              alt="Lusqtoff" 
+              class="max-h-12 w-auto object-contain hidden dark:block group-hover:scale-105 transition-transform duration-300 drop-shadow-sm"
+            >
+          </div>
+
+          <!-- Text content -->
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="text-[10px] uppercase font-bold tracking-widest text-zinc-400 dark:text-zinc-500 group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors">
+                Herramientas &bull; Ferretería
+              </div>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-tight line-clamp-2">
+                Herramientas manuales, equipos y consumibles industriales.
+              </p>
+            </div>
+            <div class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-yellow-700 dark:text-yellow-400 group-hover:underline">
+              <i data-lucide="package-search" class="w-3.5 h-3.5"></i>
+              Ver catálogo &rarr;
+            </div>
+          </div>
+        </button>
+
+        <!-- ===== DONG CHENG ===== -->
+        <button
+          onclick="selectBrand('Dong Cheng')"
+          class="group relative overflow-hidden bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 hover:border-[#1E6FC8] rounded-3xl text-left transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-[#1E6FC8]/15 active:scale-[0.98] flex flex-col min-h-[220px]"
+        >
+          <!-- Exclusive badge on top of logo panel -->
+          <div class="absolute top-2.5 right-2.5 z-20">
+            <span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-[#1E6FC8] text-white text-[9px] font-black uppercase tracking-wider shadow-sm">
+              <i data-lucide="star" class="w-2.5 h-2.5 fill-current"></i>
+              Dist. Exclusivo
+            </span>
+          </div>
+
+          <!-- Full-width logo panel — overflow-hidden clips the whitespace from the .webp -->
+          <div class="h-28 flex items-center justify-center bg-white dark:bg-white/5 rounded-t-3xl px-4 py-0 border-b border-zinc-200 dark:border-zinc-800 group-hover:bg-blue-50 dark:group-hover:bg-[#1E6FC8]/10 transition-colors overflow-hidden">
+            <img 
+              src="assets/images/logo-dongcheng.webp" 
+              alt="Dong Cheng" 
+              class="w-full max-w-[220px] object-contain group-hover:scale-105 transition-transform duration-300"
+              style="margin-top: -20%; margin-bottom: -20%;"
+            >
+          </div>
+
+          <!-- Text content -->
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="text-[10px] uppercase font-bold tracking-widest text-zinc-400 dark:text-zinc-500 group-hover:text-[#1E6FC8] transition-colors">
+                Eléctricas &bull; Industriales
+              </div>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-tight line-clamp-2">
+                Taladros, amoladoras y herramientas profesionales.
+              </p>
+            </div>
+            <div class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-[#1E6FC8] dark:text-blue-400 group-hover:underline">
+              <i data-lucide="package-search" class="w-3.5 h-3.5"></i>
+              Ver catálogo &rarr;
+            </div>
+          </div>
+        </button>
+
+        <!-- ===== MAKITA ===== -->
+        <button
+          onclick="selectBrand('Makita')"
+          class="group relative overflow-hidden bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 hover:border-[#ED1C24] rounded-3xl text-left transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-[#ED1C24]/15 active:scale-[0.98] flex flex-col min-h-[220px]"
+        >
+          <!-- Full-width logo panel -->
+          <div class="h-28 flex items-center justify-center bg-zinc-50 dark:bg-zinc-950 rounded-t-3xl px-5 py-4 border-b border-zinc-200 dark:border-zinc-800 group-hover:bg-red-50 dark:group-hover:bg-red-950/20 transition-colors">
+            <img 
+              src="assets/images/logo-makita.png" 
+              alt="Makita" 
+              class="max-h-10 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-sm"
+            >
+          </div>
+
+          <!-- Text content -->
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="text-[10px] uppercase font-bold tracking-widest text-zinc-400 dark:text-zinc-500 group-hover:text-[#ED1C24] transition-colors">
+                Línea Profesional &bull; Japón
+              </div>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-tight line-clamp-2">
+                Herramientas eléctricas y a batería de máxima exigencia.
+              </p>
+            </div>
+            <div class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-[#ED1C24] dark:text-red-400 group-hover:underline">
+              <i data-lucide="package-search" class="w-3.5 h-3.5"></i>
+              Ver catálogo &rarr;
+            </div>
+          </div>
+        </button>
+
+        <!-- ===== BAHCO ===== -->
+        <button
+          onclick="selectBrand('Bahco')"
+          class="group relative overflow-hidden bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 hover:border-[#D64516] rounded-3xl text-left transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-[#D64516]/15 active:scale-[0.98] flex flex-col min-h-[220px]"
+        >
+          <!-- Full-width logo panel -->
+          <div class="h-28 flex items-center justify-center bg-zinc-50 dark:bg-zinc-950 rounded-t-3xl px-5 py-4 border-b border-zinc-200 dark:border-zinc-800 group-hover:bg-orange-50 dark:group-hover:bg-orange-950/20 transition-colors">
+            <img 
+              src="assets/images/logo-bahco.png" 
+              alt="Bahco" 
+              class="max-h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-sm rounded-lg"
+            >
+          </div>
+
+          <!-- Text content -->
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="text-[10px] uppercase font-bold tracking-widest text-zinc-400 dark:text-zinc-500 group-hover:text-[#D64516] transition-colors">
+                Herramientas de Mano &bull; Suecia
+              </div>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 leading-tight line-clamp-2">
+                Llaves, tenazas, arcos de sierra y herramientas de corte.
+              </p>
+            </div>
+            <div class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-[#D64516] dark:text-orange-400 group-hover:underline">
+              <i data-lucide="package-search" class="w-3.5 h-3.5"></i>
+              Ver catálogo &rarr;
+            </div>
+          </div>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE CATALOG & ORDER SYSTEM ================= -->
+  <section id="catalogo" class="py-16 bg-white dark:bg-[#0D0F12] border-b border-zinc-200 dark:border-zinc-800 min-h-screen transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Catalog Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-zinc-200 dark:border-zinc-800">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-yellow-400 text-black text-xs font-black uppercase tracking-wider mb-2 shadow-sm">
+            🛒 Catálogo Completo &bull; 1.137 Artículos Reales
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-heading font-black text-zinc-900 dark:text-white tracking-tight">
+            HERRAMIENTAS &bull; MATERIALES &bull; FERRETERÍA INDUSTRIAL
+          </h2>
+          <p class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+            Buscá por código SKU, nombre o marca. Agregá al pedido para cotizar por WhatsApp o hacé clic en <strong>"Buscar en nuestra tienda"</strong> para encontrarlo en Mercado Libre.
+          </p>
+        </div>
+
+        <!-- Order Button -->
+        <div class="flex items-center gap-3">
+          <button onclick="toggleCartDrawer()" class="px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-black font-extrabold text-xs uppercase tracking-wider rounded-2xl transition-all shadow-lg flex items-center gap-2">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            <span>Ver Mi Pedido</span>
+            <span class="cart-badge-count hidden px-2 py-0.5 bg-black text-yellow-400 font-black rounded-full font-mono text-[11px]">0</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Search & Filters Toolbar -->
+      <div class="mt-8 bg-zinc-50 dark:bg-zinc-900/90 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-4 sm:p-6 shadow-sm dark:shadow-xl">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+          
+          <!-- Search input -->
+          <div class="md:col-span-6 relative">
+            <input 
+              type="text" 
+              id="search-input" 
+              placeholder="Buscar por código SKU (ej: 985 000...), nombre, medida o marca..." 
+              class="w-full bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 text-sm text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 rounded-2xl pl-10 pr-4 py-3 focus:outline-none focus:border-yellow-400 font-medium"
+            >
+            <i data-lucide="search" class="w-5 h-5 text-yellow-600 dark:text-yellow-400 absolute left-3.5 top-3.5"></i>
+          </div>
+
+          <!-- Brand Filter -->
+          <div class="md:col-span-3">
+            <select id="brand-filter-select" class="w-full bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 text-sm text-zinc-800 dark:text-zinc-200 rounded-2xl px-4 py-3 focus:outline-none focus:border-yellow-400 font-medium">
+              <option value="all">Todas las Marcas</option>
+            </select>
+          </div>
+
+          <!-- Sort Filter -->
+          <div class="md:col-span-3">
+            <select id="catalog-sort-select" class="w-full bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 text-sm text-zinc-800 dark:text-zinc-200 rounded-2xl px-4 py-3 focus:outline-none focus:border-yellow-400 font-medium">
+              <option value="featured">Destacados / General</option>
+              <option value="name-asc">Nombre: A &rarr; Z</option>
+              <option value="name-desc">Nombre: Z &rarr; A</option>
+              <option value="sku">Código SKU</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Mobile category select -->
+        <div class="mt-4 md:hidden">
+          <select id="category-select-mobile" class="w-full bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 text-sm text-yellow-700 dark:text-yellow-400 font-bold rounded-2xl px-4 py-2.5 focus:outline-none focus:border-yellow-400">
+            <option value="all">Todas las Categorías</option>
+          </select>
+        </div>
+
+        <!-- Desktop Category Pills -->
+        <div class="hidden md:flex items-center gap-2 overflow-x-auto pt-4 mt-4 border-t border-zinc-200 dark:border-zinc-800/80 pb-1" id="category-filter-list">
+          <!-- Injected by JS -->
+        </div>
+
+      </div>
+
+      <!-- Results Count Bar -->
+      <div class="flex items-center justify-between mt-6 mb-6 px-1 text-xs text-zinc-500 dark:text-zinc-400 font-medium">
+        <span id="catalog-results-count">
+          Cargando catálogo...
+        </span>
+        <button onclick="resetFilters()" class="text-yellow-600 dark:text-yellow-400 hover:underline flex items-center gap-1 font-bold">
+          <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+          <span>Limpiar filtros</span>
+        </button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="products-grid">
+        <!-- Injected by JS -->
+      </div>
+
+      <!-- Pagination -->
+      <div class="mt-12 text-center" id="catalog-pagination">
+        <!-- Injected by JS -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= VALUE PROPOSITION ================= -->
+  <section class="py-16 bg-zinc-50 dark:bg-[#0F1216] border-b border-zinc-200 dark:border-zinc-800 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="p-6 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex flex-col items-center text-center shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-yellow-400 text-black flex items-center justify-center mb-4 shadow-md">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-base font-heading font-black text-zinc-900 dark:text-white">Stock en Depósito</h4>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-2 leading-relaxed">Más de 1.100 herramientas y materiales en stock permanente en Resistencia.</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex flex-col items-center text-center shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-yellow-400 text-black flex items-center justify-center mb-4 shadow-md">
+            <i data-lucide="truck" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-base font-heading font-black text-zinc-900 dark:text-white">Envíos a Todo el País</h4>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-2 leading-relaxed">Despachos por Mercado Envíos y expresos viales a todo el territorio nacional.</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex flex-col items-center text-center shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-yellow-400 text-black flex items-center justify-center mb-4 shadow-md">
+            <i data-lucide="credit-card" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-base font-heading font-black text-zinc-900 dark:text-white">Facturación A y B</h4>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-2 leading-relaxed">Atención formal a empresas, constructoras, talleres y organismos públicos.</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex flex-col items-center text-center shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-yellow-400 text-black flex items-center justify-center mb-4 shadow-md">
+            <img src="assets/images/mercadolibre-handshake.png" alt="ML" class="w-6 h-6 object-contain">
+          </div>
+          <h4 class="text-base font-heading font-black text-zinc-900 dark:text-white">Tienda Oficial ML</h4>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-2 leading-relaxed">Comprá con cuotas y la seguridad de la plataforma líder de e-commerce.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PAYMENT METHODS & CARDS ================= -->
+  <section class="py-16 bg-white dark:bg-[#0A0C0F] border-b border-zinc-200 dark:border-zinc-800 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs uppercase font-black tracking-widest text-yellow-700 dark:text-yellow-500 bg-yellow-400/20 px-3.5 py-1 rounded-full border border-yellow-400/30">
+          Facilidades de Compra
+        </span>
+        <h3 class="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-zinc-900 dark:text-white mt-3 tracking-tight">
+          MEDIOS DE PAGO &amp; FINANCIACIÓN
+        </h3>
+        <p class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 mt-2">
+          Comprá en mostrador, por WhatsApp o en nuestra tienda online con todas las facilidades disponibles.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Left Column: Formas de Pago (6 Methods) -->
+        <div class="lg:col-span-6 bg-zinc-50 dark:bg-zinc-900/90 border-2 border-zinc-200 dark:border-zinc-800 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="flex items-center gap-3 mb-6 pb-4 border-b border-zinc-200 dark:border-zinc-800">
+              <div class="w-10 h-10 rounded-2xl bg-yellow-400 text-black flex items-center justify-center font-bold shrink-0 shadow-md">
+                <i data-lucide="wallet" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-heading font-black text-zinc-900 dark:text-white uppercase tracking-tight">
+                  Aceptamos todas las Formas de Pago
+                </h4>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400">Flexibilidad total para compras particulares y corporativas</p>
+              </div>
+            </div>
+
+            <!-- 6 Payment Pills Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
+              
+              <!-- 1. Transferencia -->
+              <div class="p-3.5 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex flex-col items-center text-center group hover:border-yellow-400 transition-colors">
+                <div class="w-11 h-11 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center text-yellow-600 dark:text-yellow-400 mb-2 border border-zinc-200 dark:border-zinc-800 group-hover:scale-110 transition-transform">
+                  <i data-lucide="building-2" class="w-5 h-5"></i>
+                </div>
+                <span class="text-xs font-bold text-zinc-900 dark:text-white leading-tight">Transferencia Bancaria</span>
+                <span class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-0.5">CBU &bull; CVU &bull; Alias</span>
+              </div>
+
+              <!-- 2. QR Code -->
+              <div class="p-3.5 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex flex-col items-center text-center group hover:border-yellow-400 transition-colors">
+                <div class="w-11 h-11 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center text-yellow-600 dark:text-yellow-400 mb-2 border border-zinc-200 dark:border-zinc-800 group-hover:scale-110 transition-transform">
+                  <i data-lucide="qr-code" class="w-5 h-5"></i>
+                </div>
+                <span class="text-xs font-bold text-zinc-900 dark:text-white leading-tight">Código QR</span>
+                <span class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-0.5">Todas las billeteras</span>
+              </div>
+
+              <!-- 3. Tarjetas -->
+              <div class="p-3.5 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex flex-col items-center text-center group hover:border-yellow-400 transition-colors">
+                <div class="w-11 h-11 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center text-yellow-600 dark:text-yellow-400 mb-2 border border-zinc-200 dark:border-zinc-800 group-hover:scale-110 transition-transform">
+                  <i data-lucide="credit-card" class="w-5 h-5"></i>
+                </div>
+                <span class="text-xs font-bold text-zinc-900 dark:text-white leading-tight">Débito &amp; Crédito</span>
+                <span class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-0.5">Presencial y online</span>
+              </div>
+
+              <!-- 4. Efectivo -->
+              <div class="p-3.5 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex flex-col items-center text-center group hover:border-yellow-400 transition-colors">
+                <div class="w-11 h-11 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center text-yellow-600 dark:text-yellow-400 mb-2 border border-zinc-200 dark:border-zinc-800 group-hover:scale-110 transition-transform">
+                  <i data-lucide="banknote" class="w-5 h-5"></i>
+                </div>
+                <span class="text-xs font-bold text-zinc-900 dark:text-white leading-tight">Efectivo</span>
+                <span class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-0.5">Pago en mostrador</span>
+              </div>
+
+              <!-- 5. Cheques -->
+              <div class="p-3.5 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex flex-col items-center text-center group hover:border-yellow-400 transition-colors">
+                <div class="w-11 h-11 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center text-yellow-600 dark:text-yellow-400 mb-2 border border-zinc-200 dark:border-zinc-800 group-hover:scale-110 transition-transform">
+                  <i data-lucide="file-check" class="w-5 h-5"></i>
+                </div>
+                <span class="text-xs font-bold text-zinc-900 dark:text-white leading-tight">Cheques</span>
+                <span class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-0.5">Cuenta corriente empresas</span>
+              </div>
+
+              <!-- 6. Mercado Pago -->
+              <div class="p-3.5 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex flex-col items-center text-center group hover:border-yellow-400 transition-colors">
+                <div class="w-11 h-11 rounded-full bg-zinc-100 dark:bg-zinc-900 flex items-center justify-center text-[#009EE3] mb-2 border border-zinc-200 dark:border-zinc-800 group-hover:scale-110 transition-transform">
+                  <img src="assets/images/mercadolibre-handshake.png" alt="MP" class="w-5 h-5 object-contain">
+                </div>
+                <span class="text-xs font-bold text-zinc-900 dark:text-white leading-tight">Mercado Pago</span>
+                <span class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-0.5">Dinero en cuenta y link</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Bottom Notice -->
+          <div class="mt-6 pt-4 border-t border-zinc-200 dark:border-zinc-800 flex items-center gap-2.5 text-[11px] text-zinc-600 dark:text-zinc-400">
+            <i data-lucide="badge-percent" class="w-4 h-4 text-yellow-500 shrink-0"></i>
+            <span>Consultá por descuentos especiales por pago de contado o compras por volumen.</span>
+          </div>
+        </div>
+
+        <!-- Right Column: Tarjetas Aceptadas -->
+        <div class="lg:col-span-6 bg-zinc-50 dark:bg-zinc-900/90 border-2 border-zinc-200 dark:border-zinc-800 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="flex items-center gap-3 mb-6 pb-4 border-b border-zinc-200 dark:border-zinc-800">
+              <div class="w-10 h-10 rounded-2xl bg-[#FFE600] text-black flex items-center justify-center font-bold shrink-0 shadow-md">
+                <i data-lucide="credit-card" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-heading font-black text-zinc-900 dark:text-white uppercase tracking-tight">
+                  Aceptamos todas las Tarjetas
+                </h4>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400">Planes en cuotas con las principales entidades bancarias</p>
+              </div>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
+              
+              <!-- VISA -->
+              <div class="p-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center text-center shadow-sm hover:border-blue-500 transition-colors h-24">
+                <span class="text-xl sm:text-2xl font-black italic tracking-tighter text-[#1A1F71] dark:text-blue-400 font-serif">VISA</span>
+                <span class="text-[9px] uppercase font-bold text-zinc-400 mt-1">Débito &bull; Crédito</span>
+              </div>
+
+              <!-- MASTERCARD -->
+              <div class="p-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center text-center shadow-sm hover:border-red-500 transition-colors h-24">
+                <div class="flex items-center -space-x-2">
+                  <div class="w-6 h-6 rounded-full bg-[#EB001B]"></div>
+                  <div class="w-6 h-6 rounded-full bg-[#F79E1B]/90"></div>
+                </div>
+                <span class="text-[11px] font-bold text-zinc-800 dark:text-zinc-200 mt-1.5 leading-none">Mastercard</span>
+              </div>
+
+              <!-- TARJETA TUYA (NBCH) -->
+              <div class="p-4 rounded-2xl bg-white dark:bg-zinc-950 border-2 border-[#5A2D81]/30 hover:border-[#5A2D81] transition-colors flex flex-col items-center justify-center text-center shadow-sm h-24 relative overflow-hidden group">
+                <span class="text-lg font-black tracking-tight text-[#5A2D81] dark:text-[#A76FD6]">tuya</span>
+                <span class="text-[9px] font-bold text-zinc-500 dark:text-zinc-400 mt-0.5">Nuevo Banco del Chaco</span>
+              </div>
+
+              <!-- TARJETA NARANJA X -->
+              <div class="p-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center text-center shadow-sm hover:border-orange-500 transition-colors h-24">
+                <div class="flex items-center gap-1">
+                  <span class="w-5 h-5 rounded-md bg-[#FF6600] text-white font-black text-xs flex items-center justify-center">N</span>
+                  <span class="text-sm font-black text-[#FF6600]">Naranja X</span>
+                </div>
+                <span class="text-[9px] uppercase font-bold text-zinc-400 mt-1">Plan Z &bull; Cuotas</span>
+              </div>
+
+              <!-- CABAL -->
+              <div class="p-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center text-center shadow-sm hover:border-cyan-600 transition-colors h-24">
+                <div class="flex items-center gap-1">
+                  <span class="text-xs font-black text-[#005A9C] dark:text-cyan-400 tracking-wider">&lang;&rang; CABAL</span>
+                </div>
+                <span class="text-[9px] uppercase font-bold text-zinc-400 mt-1">Débito &bull; Crédito</span>
+              </div>
+
+              <!-- MERCADO PAGO CARDS -->
+              <div class="p-4 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center text-center shadow-sm hover:border-[#009EE3] transition-colors h-24">
+                <span class="text-xs font-black text-[#009EE3] tracking-tight">mercado pago</span>
+                <span class="text-[9px] uppercase font-bold text-zinc-400 mt-1">Prepaga &bull; Débito</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Bottom Notice -->
+          <div class="mt-6 pt-4 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-between flex-wrap gap-2 text-[11px] text-zinc-600 dark:text-zinc-400">
+            <span class="inline-flex items-center gap-1.5 font-semibold">
+              <i data-lucide="shield-check" class="w-4 h-4 text-emerald-500"></i>
+              Cobros 100% seguros y respaldados
+            </span>
+            <span class="font-bold text-yellow-700 dark:text-yellow-400">Facturas A y B con IVA</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CONTACT & SOCIAL NETWORKS ================= -->
+  <section id="contacto" class="py-20 bg-white dark:bg-[#0D0F12] transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Contact Info & Socials -->
+        <div class="lg:col-span-5">
+          <span class="text-xs uppercase font-extrabold tracking-widest text-yellow-700 dark:text-yellow-400 bg-yellow-400/20 px-3.5 py-1 rounded-full border border-yellow-400/30">
+            Atención al Cliente
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-heading font-black text-zinc-900 dark:text-white mt-4 tracking-tight">
+            CONTACTÁ CON BERTONCINI
+          </h2>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-3 leading-relaxed">
+            Estamos en Resistencia, Chaco, para brindarte la mejor atención en mostrador, presupuestos para empresas y despacho de pedidos.
+          </p>
+
+          <!-- Contact cards -->
+          <div class="mt-8 space-y-3.5">
+            
+            <a 
+              href="https://maps.app.goo.gl/iU9ewPVMuHqRfyE1A"
+              target="_blank" rel="noopener noreferrer"
+              class="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-start gap-4 hover:border-yellow-400 transition-colors group"
+            >
+              <div class="p-2.5 rounded-xl bg-yellow-400 text-black shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-zinc-900 dark:text-white group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors">Casa Central &bull; Mostrador y Depósito</h4>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">Santiago del Estero 2415 (Ruta 11 y Puente Alto Nivel), Resistencia, Chaco</p>
+                <span class="text-[10px] text-yellow-600 dark:text-yellow-400 font-bold mt-1 inline-flex items-center gap-1">
+                  <i data-lucide="external-link" class="w-3 h-3"></i>
+                  Ver en Google Maps
+                </span>
+              </div>
+            </a>
+
+            <div class="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-start gap-4">
+              <div class="p-2.5 rounded-xl bg-yellow-400 text-black shrink-0">
+                <i data-lucide="clock" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-zinc-900 dark:text-white">Horario de Atención</h4>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">Lunes a Viernes: 8:00 – 12:00 &bull; 15:00 – 19:00</p>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400">Sábados: 8:00 – 12:00</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-start gap-4">
+              <div class="p-2.5 rounded-xl bg-yellow-400 text-black shrink-0">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-zinc-900 dark:text-white">Teléfonos &amp; WhatsApp</h4>
+                <div class="flex flex-wrap gap-x-4 gap-y-1 mt-1">
+                  <a href="https://wa.me/5493624537266" target="_blank" class="text-xs text-yellow-600 dark:text-yellow-400 font-bold hover:underline flex items-center gap-1">
+                    <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                    3624-537266
+                  </a>
+                  <a href="https://wa.me/5493625678675" target="_blank" class="text-xs text-yellow-600 dark:text-yellow-400 font-bold hover:underline flex items-center gap-1">
+                    <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                    3625-678675
+                  </a>
+                </div>
+                <a href="mailto:ventas@bertoncinionline.com.ar" class="text-xs text-zinc-500 dark:text-zinc-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors mt-1 flex items-center gap-1">
+                  <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+                  ventas@bertoncinionline.com.ar
+                </a>
+              </div>
+            </div>
+
+            <!-- Social Networks Highlights -->
+            <div class="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+              <h4 class="text-xs uppercase font-bold text-zinc-500 dark:text-zinc-400 mb-3 tracking-wider">
+                Nuestras Redes Sociales Oficiales:
+              </h4>
+              <div class="grid grid-cols-2 gap-2.5">
+                <a 
+                  href="https://www.facebook.com/BertonciniResistencia/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="btn-social-facebook p-3 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-center gap-2.5 text-xs font-bold text-zinc-800 dark:text-zinc-200 transition-all"
+                >
+                  <svg class="w-4 h-4 fill-[#1877F2] shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  <span>Facebook</span>
+                </a>
+                <a 
+                  href="https://www.instagram.com/bertonciniresistencia/?hl=es-la" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="btn-social-instagram p-3 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-center gap-2.5 text-xs font-bold text-zinc-800 dark:text-zinc-200 transition-all"
+                >
+                  <svg class="w-4 h-4 fill-[#E4405F] shrink-0" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                  <span>Instagram</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Quick Message Card -->
+        <div class="lg:col-span-7 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-6 sm:p-8 shadow-xl">
+          <h3 class="text-xl font-heading font-black text-zinc-900 dark:text-white">
+            ENVÍENOS SU CONSULTA DIRECTA
+          </h3>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1 mb-6">
+            Complete los datos y le responderemos de inmediato por WhatsApp o email.
+          </p>
+
+          <form onsubmit="event.preventDefault(); submitDirectContact();" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-xs font-semibold text-zinc-700 dark:text-zinc-300 block mb-1">Nombre / Razón Social *</label>
+                <input type="text" id="contact-name" required placeholder="Ej: Talleres del Norte SRL" class="w-full bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 text-sm text-zinc-900 dark:text-white rounded-2xl px-4 py-2.5 focus:border-yellow-400 focus:outline-none">
+              </div>
+              <div>
+                <label class="text-xs font-semibold text-zinc-700 dark:text-zinc-300 block mb-1">Teléfono / WhatsApp *</label>
+                <input type="text" id="contact-phone" required placeholder="Ej: 3624112233" class="w-full bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 text-sm text-zinc-900 dark:text-white rounded-2xl px-4 py-2.5 focus:border-yellow-400 focus:outline-none">
+              </div>
+            </div>
+
+            <div>
+              <label class="text-xs font-semibold text-zinc-700 dark:text-zinc-300 block mb-1">Motivo de Consulta</label>
+              <select id="contact-reason" class="w-full bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 text-sm text-zinc-900 dark:text-white rounded-2xl px-4 py-2.5 focus:border-yellow-400 focus:outline-none font-medium">
+                <option value="Cotización de Herramientas / Materiales">Cotización de Herramientas / Materiales</option>
+                <option value="Consulta sobre compra en Mercado Libre">Consulta sobre compra en Mercado Libre</option>
+                <option value="Venta Mayorista / Cuenta Corriente">Venta Mayorista / Cuenta Corriente</option>
+                <option value="Corte de Chapas / Perfiles a Medida">Corte de Chapas / Perfiles a Medida</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="text-xs font-semibold text-zinc-700 dark:text-zinc-300 block mb-1">Mensaje o Detalle</label>
+              <textarea id="contact-message" rows="4" placeholder="Escriba aquí los detalles..." class="w-full bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 text-sm text-zinc-900 dark:text-white rounded-2xl px-4 py-2.5 focus:border-yellow-400 focus:outline-none"></textarea>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <!-- WhatsApp Button -->
+              <button 
+                type="button" 
+                onclick="submitContactWhatsApp()" 
+                class="w-full py-4 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider rounded-2xl transition-all shadow-lg shadow-emerald-600/20 flex items-center justify-center gap-2 active:scale-95 cursor-pointer">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Enviar a WhatsApp</span>
+              </button>
+
+              <!-- Email Button -->
+              <button 
+                type="button" 
+                onclick="submitContactEmail()" 
+                class="w-full py-4 px-4 bg-yellow-400 hover:bg-yellow-500 text-black font-extrabold text-xs sm:text-sm uppercase tracking-wider rounded-2xl transition-all shadow-lg shadow-yellow-400/20 flex items-center justify-center gap-2 active:scale-95 cursor-pointer">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                <span>Enviar por Email</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-zinc-950 text-zinc-400 text-xs py-14 border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-zinc-800/80">
+        
+        <!-- Brand & Social Column -->
+        <div>
+          <img 
+            src="assets/images/logo-dark.png" 
+            alt="Bertoncini" 
+            class="h-10 w-auto object-contain mb-3"
+          />
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Ferretería Industrial, Herramientas, Acero y Suministros en Resistencia, Chaco.
+          </p>
+          
+          <!-- Social Networks -->
+          <div class="flex items-center gap-2.5 mt-5">
+            <!-- ML -->
+            <a 
+              href="https://www.mercadolibre.com.ar/pagina/higiniobertonciniyciasa" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="w-9 h-9 rounded-xl bg-[#FFE600] flex items-center justify-center transition-transform hover:scale-110 p-2 shadow-sm" 
+              title="Tienda Oficial en Mercado Libre"
+            >
+              <img src="assets/images/mercadolibre-handshake.png" alt="Mercado Libre" class="w-full h-full object-contain">
+            </a>
+            <!-- Facebook -->
+            <a 
+              href="https://www.facebook.com/BertonciniResistencia/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="btn-social-facebook w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center transition-all text-zinc-300 shadow-sm" 
+              title="Facebook Bertoncini"
+            >
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <!-- Instagram -->
+            <a 
+              href="https://www.instagram.com/bertonciniresistencia/?hl=es-la" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="btn-social-instagram w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center transition-all text-zinc-300 shadow-sm" 
+              title="Instagram Bertoncini"
+            >
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <!-- WhatsApp -->
+            <a 
+              href="https://wa.me/5493624537266" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="btn-social-whatsapp w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center transition-all text-zinc-300 shadow-sm" 
+              title="WhatsApp Ventas"
+            >
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sales Channels Column -->
+        <div>
+          <h4 class="text-sm font-heading font-black text-white uppercase tracking-wider mb-3">Canales de Venta</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#mercadolibre" onclick="openMercadoLibreBanner()" class="text-yellow-400 font-bold hover:underline">Tienda Oficial Mercado Libre</a></li>
+            <li><a href="#catalogo" class="hover:text-yellow-400 transition-colors">Cotizador Online por WhatsApp</a></li>
+            <li><a href="#contacto" class="hover:text-yellow-400 transition-colors">Venta en Mostrador Resistencia</a></li>
+          </ul>
+        </div>
+
+        <!-- Divisions & Websites Column -->
+        <div>
+          <h4 class="text-sm font-heading font-black text-white uppercase tracking-wider mb-3">Nuestras Divisiones</h4>
+          <ul class="space-y-2 text-xs">
+            <li>
+              <a 
+                href="https://bertoncinigruas.com.ar/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="text-zinc-300 hover:text-yellow-400 transition-colors flex items-center gap-1 font-semibold"
+              >
+                <span>Grúas &amp; Carretones</span>
+                <i data-lucide="external-link" class="w-3 h-3 text-yellow-400"></i>
+              </a>
+            </li>
+            <li><a href="#catalogo" onclick="setCategory('Herramientas')" class="hover:text-yellow-400 transition-colors">Herramientas Eléctricas &amp; Manuales</a></li>
+            <li><a href="#catalogo" onclick="setCategory('Abrasivos y corte')" class="hover:text-yellow-400 transition-colors">Abrasivos y Discos de Corte</a></li>
+            <li><a href="#catalogo" onclick="setCategory('Soldadura')" class="hover:text-yellow-400 transition-colors">Soldadura y Consumibles</a></li>
+          </ul>
+        </div>
+
+        <!-- Location Column -->
+        <div>
+          <h4 class="text-sm font-heading font-black text-white uppercase tracking-wider mb-3">Ubicación &amp; Contacto</h4>
+          <a href="https://maps.app.goo.gl/iU9ewPVMuHqRfyE1A" target="_blank" class="text-xs leading-relaxed hover:text-yellow-400 transition-colors block">
+            Santiago del Estero 2415<br>
+            (Ruta 11 y Puente Alto Nivel)<br>
+            Resistencia, Chaco
+          </a>
+          <div class="mt-3 space-y-1">
+            <a href="https://wa.me/5493624537266" target="_blank" class="text-xs text-yellow-400 font-bold hover:underline flex items-center gap-1">
+              <i data-lucide="message-circle" class="w-3 h-3"></i>
+              3624-537266
+            </a>
+            <a href="https://wa.me/5493625678675" target="_blank" class="text-xs text-yellow-400 font-bold hover:underline flex items-center gap-1">
+              <i data-lucide="message-circle" class="w-3 h-3"></i>
+              3625-678675
+            </a>
+            <a href="mailto:ventas@bertoncinionline.com.ar" class="text-xs text-zinc-400 hover:text-yellow-400 transition-colors flex items-center gap-1">
+              <i data-lucide="mail" class="w-3 h-3"></i>
+              ventas@bertoncinionline.com.ar
+            </a>
+          </div>
+          <p class="text-[10px] text-zinc-500 mt-2">
+            Lun–Vie 8:00–12:00 / 15:00–19:00 &bull; Sáb 8:00–12:00
+          </p>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-500">
+        <p>&copy; 2026 Bertoncini Herramientas &amp; Ferretería Industrial. Todos los derechos reservados.</p>
+        
+        <!-- Discreet Dashboard Link -->
+        <button onclick="openAnalyticsModal()" class="text-zinc-500 hover:text-yellow-400 transition-colors flex items-center gap-1.5 font-mono">
+          <i data-lucide="bar-chart-3" class="w-3.5 h-3.5 text-yellow-500"></i>
+          <span>📊 Panel de Métricas / Analytics (Alt + A)</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING BACK TO TOP / HOME BUTTON (BOTTOM-LEFT) ================= -->
+  <button 
+    id="floating-home-btn"
+    onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    class="fixed bottom-6 right-6 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-yellow-400 hover:bg-yellow-300 text-black shadow-xl shadow-yellow-400/30 hover:shadow-yellow-400/50 flex items-center justify-center transition-all duration-300 transform opacity-0 pointer-events-none translate-y-6 hover:scale-110 active:scale-95 border-2 border-black/10 dark:border-white/20 group"
+    title="Ir al inicio"
+    aria-label="Volver arriba / Inicio"
+  >
+    <i data-lucide="home" class="w-6 h-6 sm:w-7 sm:h-7 stroke-[2.2] group-hover:scale-110 transition-transform"></i>
+  </button>
+
+  <!-- ================= CART & ORDER SLIDE-OVER DRAWER ================= -->
+  <div id="cart-backdrop" onclick="toggleCartDrawer()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+
+  <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white dark:bg-[#12151A] border-l border-zinc-200 dark:border-zinc-800 z-50 shadow-2xl flex flex-col justify-between transition-transform duration-300 translate-x-full">
+    
+    <!-- Drawer Header -->
+    <div class="p-4 border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between bg-zinc-50 dark:bg-zinc-950">
+      <div class="flex items-center gap-2.5">
+        <div class="p-2 rounded-xl bg-yellow-400 text-black">
+          <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="text-base font-heading font-black text-zinc-900 dark:text-white tracking-wide">MI PEDIDO / COTIZACIÓN</h3>
+          <p class="text-[11px] text-zinc-500 dark:text-zinc-400" id="cart-drawer-item-count">0 artículos</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button onclick="clearCart()" class="text-zinc-400 hover:text-red-500 p-1.5 transition-colors" title="Vaciar pedido">
+          <i data-lucide="trash-2" class="w-4 h-4"></i>
+        </button>
+        <button onclick="toggleCartDrawer()" class="text-zinc-400 hover:text-black dark:hover:text-white p-1.5 transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Drawer Body (Items List) -->
+    <div class="flex-1 overflow-y-auto p-4 space-y-3" id="cart-items-container">
+      <!-- Items injected by app.js -->
+    </div>
+
+    <!-- Empty State in Cart -->
+    <div id="cart-empty-state" class="py-16 px-6 text-center text-zinc-400 hidden">
+      <div class="w-16 h-16 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center mx-auto text-yellow-500 dark:text-yellow-400 mb-4">
+        <i data-lucide="shopping-bag" class="w-8 h-8"></i>
+      </div>
+      <h4 class="text-base font-bold text-zinc-900 dark:text-white mb-1">Tu carrito de pedido está vacío</h4>
+      <p class="text-xs text-zinc-500 dark:text-zinc-400 mb-6">Navegá el catálogo con más de 1.100 herramientas y agregá lo que necesites cotizar.</p>
+      <button onclick="toggleCartDrawer()" class="px-6 py-2.5 bg-yellow-400 hover:bg-yellow-500 text-black font-bold rounded-2xl text-xs uppercase tracking-wider transition-colors">
+        Explorar Productos
+      </button>
+    </div>
+
+    <!-- Drawer Footer (Checkout form & WhatsApp submission) -->
+    <div id="cart-drawer-footer" class="p-4 border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 space-y-3">
+      
+      <!-- Customer Info Form -->
+      <div class="space-y-2 bg-white dark:bg-zinc-900/80 p-3 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+        <span class="text-[11px] font-bold uppercase tracking-wider text-yellow-700 dark:text-yellow-400 block mb-1">
+          Datos para la Cotización:
+        </span>
+        
+        <input 
+          type="text" 
+          id="checkout-name" 
+          placeholder="Nombre y Apellido / Razón Social *" 
+          class="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 text-xs text-zinc-900 dark:text-white rounded-xl px-3 py-2 focus:border-yellow-400 focus:outline-none"
+        >
+
+        <div class="grid grid-cols-2 gap-2">
+          <input 
+            type="text" 
+            id="checkout-phone" 
+            placeholder="Teléfono / WhatsApp" 
+            class="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 text-xs text-zinc-900 dark:text-white rounded-xl px-3 py-2 focus:border-yellow-400 focus:outline-none"
+          >
+          <input 
+            type="text" 
+            id="checkout-cuit" 
+            placeholder="CUIT / DNI (Opcional)" 
+            class="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 text-xs text-zinc-900 dark:text-white rounded-xl px-3 py-2 focus:border-yellow-400 focus:outline-none"
+          >
+        </div>
+
+        <select id="checkout-delivery" class="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 text-xs text-zinc-900 dark:text-white rounded-xl px-3 py-2 focus:border-yellow-400 focus:outline-none font-medium">
+          <option value="Retiro en Local (Resistencia)">Retiro en Local (Resistencia)</option>
+          <option value="Envío a Obra / Flete">Envío a Obra / Flete</option>
+          <option value="Despacho por Expreso">Despacho por Expreso</option>
+        </select>
+
+        <input 
+          type="text" 
+          id="checkout-notes" 
+          placeholder="Aclaraciones generales (ej: entrega urgente)" 
+          class="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 text-xs text-zinc-900 dark:text-white rounded-xl px-3 py-2 focus:border-yellow-400 focus:outline-none"
+        >
+      </div>
+
+      <!-- Action Buttons -->
+      <button 
+        onclick="submitOrderToWhatsApp()" 
+        class="w-full py-3.5 bg-yellow-400 hover:bg-yellow-500 text-black font-extrabold text-sm uppercase tracking-wider rounded-2xl transition-all shadow-xl shadow-yellow-400/20 flex items-center justify-center gap-2 active:scale-95">
+        <i data-lucide="message-circle" class="w-5 h-5"></i>
+        <span>Enviar Pedido a WhatsApp</span>
+      </button>
+
+      <div class="grid grid-cols-2 gap-2 pt-1">
+        <button onclick="printOrderSlip()" class="py-2 px-3 bg-white dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-xl text-xs font-bold transition-colors flex items-center justify-center gap-1.5 border border-zinc-200 dark:border-zinc-800">
+          <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+          <span>Imprimir / PDF</span>
+        </button>
+        <button onclick="toggleCartDrawer()" class="py-2 px-3 bg-white dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-xl text-xs font-bold transition-colors border border-zinc-200 dark:border-zinc-800">
+          Seguir Viendo
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ================= PRODUCT DETAIL MODAL ================= -->
+  <div id="product-detail-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 hidden" onclick="if(event.target === this) closeProductModal();">
+    <div class="bg-white dark:bg-[#12151A] border-2 border-zinc-200 dark:border-zinc-800 rounded-3xl max-w-3xl w-full shadow-2xl relative max-h-[90vh] flex flex-col overflow-hidden">
+      
+      <!-- Fixed Close Button (Always visible on top right) -->
+      <button 
+        onclick="closeProductModal()" 
+        class="absolute top-3.5 right-3.5 z-30 w-9 h-9 rounded-full bg-zinc-100/90 dark:bg-zinc-800/90 hover:bg-yellow-400 hover:text-black text-zinc-600 dark:text-zinc-300 flex items-center justify-center border border-zinc-300 dark:border-zinc-700 shadow-md backdrop-blur-md transition-all cursor-pointer"
+        title="Cerrar ventana (Esc)"
+      >
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Scrollable Interior Container (Strictly contained inside modal borders) -->
+      <div id="product-modal-content" class="flex-1 overflow-y-auto p-4 sm:p-6">
+        <!-- Injected by openProductModal() -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= ANALYTICS & METRICS DASHBOARD MODAL ================= -->
+  <div id="analytics-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-white dark:bg-[#12151A] border-2 border-yellow-400 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      
+      <!-- Modal Header -->
+      <div class="p-5 bg-zinc-50 dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="p-2 rounded-xl bg-yellow-400 text-black">
+            <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-heading font-black text-zinc-900 dark:text-white tracking-wide">
+              PANEL DE MÉTRICAS &amp; CLICKS ANALYTICS
+            </h3>
+            <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Seguimiento en tiempo real de visitas, clicks a Mercado Libre y pedidos por WhatsApp</p>
+          </div>
+        </div>
+
+        <button onclick="closeAnalyticsModal()" class="text-zinc-400 hover:text-black dark:hover:text-white p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6" id="analytics-dashboard-content">
+        <!-- Injected by renderAnalyticsDashboard() -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Direct Contact script helper -->
+  <script>
+    function submitDirectContact() {
+      const name = document.getElementById('contact-name')?.value || '';
+      const phone = document.getElementById('contact-phone')?.value || '';
+      const reason = document.getElementById('contact-reason')?.value || '';
+      const msg = document.getElementById('contact-message')?.value || '';
+
+      const text = `Hola Bertoncini! 👋 Les escribo desde la web por la siguiente consulta:
+👤 *Nombre:* ${name}
+📱 *Teléfono:* ${phone}
+📌 *Motivo:* ${reason}
+📝 *Mensaje:* ${msg}`;
+
+      window.open(`https://wa.me/${CONFIG.WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`, '_blank');
+    }
+  </script>
+
+  <!-- Load Data Files -->
+  <script src="data/categories.js"></script>
+  <script src="data/ml_mapping.js"></script>
+  <script src="data/catalog.js"></script>
+
+  <!-- Load Application Logic -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>

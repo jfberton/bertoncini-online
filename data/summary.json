@@ -1,0 +1,1153 @@
+{
+  "DateScraped": "2026-08-20 16:03:36",
+  "TotalCategories": 155,
+  "Brands": null,
+  "TotalProducts": 1137,
+  "Categories": [
+    {
+      "id": 966,
+      "name": "Abrasivos",
+      "slug": "abrasivos",
+      "parent": 756,
+      "count": 36
+    },
+    {
+      "id": 756,
+      "name": "Abrasivos y corte",
+      "slug": "corte-y-abrasivos",
+      "parent": 0,
+      "count": 188
+    },
+    {
+      "id": 479,
+      "name": "Accesorios Galvanizados",
+      "slug": "accesorios-galvanizados",
+      "parent": 474,
+      "count": 19
+    },
+    {
+      "id": 1338,
+      "name": "Accesorios Inoxidables",
+      "slug": "acc-inoxidables",
+      "parent": 381,
+      "count": 5
+    },
+    {
+      "id": 475,
+      "name": "Accesorios Negros",
+      "slug": "accesorios-negros",
+      "parent": 474,
+      "count": 18
+    },
+    {
+      "id": 474,
+      "name": "Accesorios para caños",
+      "slug": "accesorios-para-canos",
+      "parent": 0,
+      "count": 37
+    },
+    {
+      "id": 1295,
+      "name": "Accesorios para soldadoras",
+      "slug": "accesorios-para-soldadoras",
+      "parent": 363,
+      "count": 13
+    },
+    {
+      "id": 1356,
+      "name": "Accesorios para torneria",
+      "slug": "accesorios-para-torneria",
+      "parent": 862,
+      "count": 7
+    },
+    {
+      "id": 571,
+      "name": "Acero",
+      "slug": "acero",
+      "parent": 570,
+      "count": 3
+    },
+    {
+      "id": 1929,
+      "name": "Acero rapido",
+      "slug": "acero-rapido",
+      "parent": 757,
+      "count": 13
+    },
+    {
+      "id": 1244,
+      "name": "Aerosol",
+      "slug": "aerosol",
+      "parent": 623,
+      "count": 1
+    },
+    {
+      "id": 1230,
+      "name": "Alambres/Torniquete",
+      "slug": "alambres",
+      "parent": 0,
+      "count": 2
+    },
+    {
+      "id": 1879,
+      "name": "Alicates/Pinzas",
+      "slug": "alicates-pinzas",
+      "parent": 387,
+      "count": 38
+    },
+    {
+      "id": 417,
+      "name": "Amoladoras",
+      "slug": "amoladoras",
+      "parent": 407,
+      "count": 10
+    },
+    {
+      "id": 438,
+      "name": "Amoladoras",
+      "slug": "amoladoras-herramientas-neumaticas",
+      "parent": 437,
+      "count": 1
+    },
+    {
+      "id": 624,
+      "name": "Antioxido",
+      "slug": "antioxido",
+      "parent": 623,
+      "count": 5
+    },
+    {
+      "id": 935,
+      "name": "Arandelas",
+      "slug": "arandelas",
+      "parent": 776,
+      "count": 2
+    },
+    {
+      "id": 447,
+      "name": "Atornillador",
+      "slug": "atornillador",
+      "parent": 407,
+      "count": 2
+    },
+    {
+      "id": 611,
+      "name": "Básico de baja aleación",
+      "slug": "basico-de-baja-aleacion",
+      "parent": 566,
+      "count": 1
+    },
+    {
+      "id": 584,
+      "name": "Basicos",
+      "slug": "basicos",
+      "parent": 566,
+      "count": 7
+    },
+    {
+      "id": 1921,
+      "name": "Baterias Recargables",
+      "slug": "baterias-recargables",
+      "parent": 415,
+      "count": 1
+    },
+    {
+      "id": 563,
+      "name": "Bisagras",
+      "slug": "bisagras",
+      "parent": 381,
+      "count": 36
+    },
+    {
+      "id": 1233,
+      "name": "Bits",
+      "slug": "bits",
+      "parent": 862,
+      "count": 2
+    },
+    {
+      "id": 1890,
+      "name": "Bolsos y Cajas",
+      "slug": "bolsos-y-cajas",
+      "parent": 387,
+      "count": 2
+    },
+    {
+      "id": 959,
+      "name": "Bronces",
+      "slug": "bronces",
+      "parent": 866,
+      "count": 16
+    },
+    {
+      "id": 866,
+      "name": "Bronces / Grilon",
+      "slug": "bronces-grilon",
+      "parent": 0,
+      "count": 47
+    },
+    {
+      "id": 974,
+      "name": "Bronces en buje",
+      "slug": "bronces-en-buje",
+      "parent": 959,
+      "count": 12
+    },
+    {
+      "id": 960,
+      "name": "Bronces macizos",
+      "slug": "bronces-macizos",
+      "parent": 959,
+      "count": 4
+    },
+    {
+      "id": 374,
+      "name": "Cadenas",
+      "slug": "cadenas",
+      "parent": 371,
+      "count": 5
+    },
+    {
+      "id": 753,
+      "name": "Canal A",
+      "slug": "canal-a",
+      "parent": 752,
+      "count": 9
+    },
+    {
+      "id": 841,
+      "name": "Canal B",
+      "slug": "canal-b",
+      "parent": 752,
+      "count": 12
+    },
+    {
+      "id": 845,
+      "name": "Canal C",
+      "slug": "canal-c",
+      "parent": 752,
+      "count": 12
+    },
+    {
+      "id": 1920,
+      "name": "Candado",
+      "slug": "candado",
+      "parent": 1384,
+      "count": 3
+    },
+    {
+      "id": 443,
+      "name": "Candados",
+      "slug": "candados",
+      "parent": 381,
+      "count": 3
+    },
+    {
+      "id": 568,
+      "name": "Celulósicos",
+      "slug": "celulosicos",
+      "parent": 566,
+      "count": 4
+    },
+    {
+      "id": 382,
+      "name": "Cerraduras",
+      "slug": "cerraduras",
+      "parent": 381,
+      "count": 29
+    },
+    {
+      "id": 1332,
+      "name": "Cerrojo / Pasador",
+      "slug": "cerrojo-pasador",
+      "parent": 381,
+      "count": 13
+    },
+    {
+      "id": 589,
+      "name": "Chapa / Goma",
+      "slug": "chapa-goma",
+      "parent": 570,
+      "count": 12
+    },
+    {
+      "id": 467,
+      "name": "Chapas Decorativas",
+      "slug": "chapas-decorativas",
+      "parent": 0,
+      "count": 1
+    },
+    {
+      "id": 1531,
+      "name": "Cinta de amarre",
+      "slug": "cinto",
+      "parent": 371,
+      "count": 8
+    },
+    {
+      "id": 436,
+      "name": "Compresores",
+      "slug": "compresores",
+      "parent": 407,
+      "count": 3
+    },
+    {
+      "id": 1389,
+      "name": "Concertinas",
+      "slug": "concertinas",
+      "parent": 1384,
+      "count": 2
+    },
+    {
+      "id": 565,
+      "name": "Consumibles",
+      "slug": "consumibles",
+      "parent": 363,
+      "count": 88
+    },
+    {
+      "id": 669,
+      "name": "Convertidor de oxido",
+      "slug": "convertidor-de-oxido",
+      "parent": 623,
+      "count": 4
+    },
+    {
+      "id": 1923,
+      "name": "Corta hierro/Punzon/Puntas",
+      "slug": "cortahierro-punzon-puntas",
+      "parent": 387,
+      "count": 12
+    },
+    {
+      "id": 1888,
+      "name": "Cortadoras",
+      "slug": "cortadoras",
+      "parent": 387,
+      "count": 5
+    },
+    {
+      "id": 1420,
+      "name": "Corte plasma",
+      "slug": "corte-plasma",
+      "parent": 756,
+      "count": 6
+    },
+    {
+      "id": 1927,
+      "name": "Corte Plasma",
+      "slug": "corte-plasma-soldadura",
+      "parent": 363,
+      "count": 6
+    },
+    {
+      "id": 675,
+      "name": "CTS Electrodos especiales",
+      "slug": "cts-electrodos-especiales",
+      "parent": 565,
+      "count": 22
+    },
+    {
+      "id": 1236,
+      "name": "Cuchillas",
+      "slug": "cuchillas",
+      "parent": 862,
+      "count": 10
+    },
+    {
+      "id": 610,
+      "name": "De contacto",
+      "slug": "de-contacto",
+      "parent": 566,
+      "count": 1
+    },
+    {
+      "id": 1544,
+      "name": "Delrin",
+      "slug": "delrin",
+      "parent": 866,
+      "count": 2
+    },
+    {
+      "id": 451,
+      "name": "Destornilladores",
+      "slug": "destornilladores",
+      "parent": 387,
+      "count": 26
+    },
+    {
+      "id": 1268,
+      "name": "Diluyentes / Estopa",
+      "slug": "diluyentes-estopa",
+      "parent": 623,
+      "count": 4
+    },
+    {
+      "id": 712,
+      "name": "Discos",
+      "slug": "discos",
+      "parent": 0,
+      "count": 18
+    },
+    {
+      "id": 721,
+      "name": "Discos corte",
+      "slug": "discos-corte",
+      "parent": 712,
+      "count": 6
+    },
+    {
+      "id": 739,
+      "name": "Discos de fibra",
+      "slug": "discos-de-fibra",
+      "parent": 712,
+      "count": 2
+    },
+    {
+      "id": 725,
+      "name": "Discos desbaste",
+      "slug": "discos-desbaste",
+      "parent": 712,
+      "count": 4
+    },
+    {
+      "id": 716,
+      "name": "Discos flap",
+      "slug": "discos-flap",
+      "parent": 712,
+      "count": 3
+    },
+    {
+      "id": 737,
+      "name": "Discos para sensitiva",
+      "slug": "discos-para-sensitiva",
+      "parent": 712,
+      "count": 3
+    },
+    {
+      "id": 1874,
+      "name": "Electricidad y Electronica",
+      "slug": "electricidad-y-electronica",
+      "parent": 0,
+      "count": 7
+    },
+    {
+      "id": 566,
+      "name": "Electrodos MMA",
+      "slug": "electrodos-mma",
+      "parent": 565,
+      "count": 25
+    },
+    {
+      "id": 371,
+      "name": "Elementos de Sujeción",
+      "slug": "elementos-de-sujecion",
+      "parent": 0,
+      "count": 52
+    },
+    {
+      "id": 433,
+      "name": "Escaleras",
+      "slug": "escaleras",
+      "parent": 0,
+      "count": 3
+    },
+    {
+      "id": 860,
+      "name": "Escalonadas",
+      "slug": "escalonadas",
+      "parent": 752,
+      "count": 4
+    },
+    {
+      "id": 1277,
+      "name": "Escuadras",
+      "slug": "escuadras",
+      "parent": 387,
+      "count": 6
+    },
+    {
+      "id": 981,
+      "name": "Eslabon y argollas",
+      "slug": "eslabon-y-argollas",
+      "parent": 371,
+      "count": 2
+    },
+    {
+      "id": 593,
+      "name": "Especiales",
+      "slug": "especiales-inox-aluminio-fundicion-limable",
+      "parent": 566,
+      "count": 3
+    },
+    {
+      "id": 687,
+      "name": "Especiales",
+      "slug": "especiales",
+      "parent": 570,
+      "count": 16
+    },
+    {
+      "id": 375,
+      "name": "Estirador",
+      "slug": "estirador",
+      "parent": 371,
+      "count": 5
+    },
+    {
+      "id": 1926,
+      "name": "Extractor/Expansor/Curvadora",
+      "slug": "extractor-expansor-curvadora",
+      "parent": 387,
+      "count": 6
+    },
+    {
+      "id": 473,
+      "name": "Fabricación Piezas Especiales",
+      "slug": "fabricacion-piezas-especiales",
+      "parent": 0,
+      "count": 1
+    },
+    {
+      "id": 1424,
+      "name": "Fabricación propia",
+      "slug": "fabricacion-propia",
+      "parent": 0,
+      "count": 7
+    },
+    {
+      "id": 776,
+      "name": "Fijación",
+      "slug": "fijacion",
+      "parent": 0,
+      "count": 14
+    },
+    {
+      "id": 372,
+      "name": "Ganchos",
+      "slug": "ganchos",
+      "parent": 371,
+      "count": 9
+    },
+    {
+      "id": 937,
+      "name": "Grilletes",
+      "slug": "grilletes",
+      "parent": 371,
+      "count": 4
+    },
+    {
+      "id": 867,
+      "name": "Grilon",
+      "slug": "grilon",
+      "parent": 866,
+      "count": 29
+    },
+    {
+      "id": 885,
+      "name": "Grilon en buje",
+      "slug": "grilon-en-buje",
+      "parent": 867,
+      "count": 19
+    },
+    {
+      "id": 884,
+      "name": "Grilon en plancha",
+      "slug": "grilon-en-plancha",
+      "parent": 867,
+      "count": 5
+    },
+    {
+      "id": 868,
+      "name": "Grilon macizo",
+      "slug": "grilon-macizo",
+      "parent": 867,
+      "count": 5
+    },
+    {
+      "id": 1931,
+      "name": "Grupos Electrogenos",
+      "slug": "grupos-electrogenos",
+      "parent": 2225,
+      "count": 2
+    },
+    {
+      "id": 963,
+      "name": "Guardacabo",
+      "slug": "guardacabo",
+      "parent": 371,
+      "count": 1
+    },
+    {
+      "id": 381,
+      "name": "Herrajes",
+      "slug": "herrajes",
+      "parent": 0,
+      "count": 94
+    },
+    {
+      "id": 2225,
+      "name": "Herramientas",
+      "slug": "herramientas-2",
+      "parent": 0,
+      "count": 311
+    },
+    {
+      "id": 415,
+      "name": "Herramientas a Batería",
+      "slug": "herramientas-a-bateria",
+      "parent": 2225,
+      "count": 12
+    },
+    {
+      "id": 407,
+      "name": "Herramientas Eléctricas",
+      "slug": "herramientas-electricas",
+      "parent": 2225,
+      "count": 39
+    },
+    {
+      "id": 387,
+      "name": "Herramientas Manuales",
+      "slug": "herramientas-manuales",
+      "parent": 2225,
+      "count": 253
+    },
+    {
+      "id": 437,
+      "name": "Herramientas Neumáticas",
+      "slug": "herramientas-neumaticas",
+      "parent": 2225,
+      "count": 6
+    },
+    {
+      "id": 1288,
+      "name": "Herramientas precisión",
+      "slug": "herramientas-precision",
+      "parent": 862,
+      "count": 18
+    },
+    {
+      "id": 863,
+      "name": "Herramientas Soldadas",
+      "slug": "herramientas-soldadas",
+      "parent": 862,
+      "count": 16
+    },
+    {
+      "id": 2220,
+      "name": "Hierros, chapas y aceros",
+      "slug": "hierros-chapas-y-aceros",
+      "parent": 0,
+      "count": 5
+    },
+    {
+      "id": 1292,
+      "name": "Insertos",
+      "slug": "insertos",
+      "parent": 862,
+      "count": 3
+    },
+    {
+      "id": 449,
+      "name": "Instrumentos de Medición",
+      "slug": "instrumentos-de-medicion",
+      "parent": 0,
+      "count": 19
+    },
+    {
+      "id": 445,
+      "name": "Izajes",
+      "slug": "izajes",
+      "parent": 371,
+      "count": 16
+    },
+    {
+      "id": 1614,
+      "name": "Jardín y Hogar",
+      "slug": "jardin-y-hogar",
+      "parent": 0,
+      "count": 28
+    },
+    {
+      "id": 1884,
+      "name": "Lijadora Neumática",
+      "slug": "lijadora-neumatica",
+      "parent": 437,
+      "count": 1
+    },
+    {
+      "id": 939,
+      "name": "Lijas y Tela esmeril",
+      "slug": "lijas-y-tela-esmeril",
+      "parent": 623,
+      "count": 6
+    },
+    {
+      "id": 1062,
+      "name": "Limas manuales",
+      "slug": "limas-manuales",
+      "parent": 387,
+      "count": 15
+    },
+    {
+      "id": 1476,
+      "name": "Limas Rotativas",
+      "slug": "lima-rotativa",
+      "parent": 756,
+      "count": 67
+    },
+    {
+      "id": 1880,
+      "name": "Llanas/Espatulas/Cucharas",
+      "slug": "llanas-espatulas",
+      "parent": 387,
+      "count": 8
+    },
+    {
+      "id": 434,
+      "name": "Llaves/Criquet",
+      "slug": "llaves-criquet",
+      "parent": 387,
+      "count": 42
+    },
+    {
+      "id": 1271,
+      "name": "Lubricantes",
+      "slug": "lubricantes",
+      "parent": 0,
+      "count": 8
+    },
+    {
+      "id": 1886,
+      "name": "Mangueras para Aire",
+      "slug": "mangueras-para-aire",
+      "parent": 437,
+      "count": 2
+    },
+    {
+      "id": 388,
+      "name": "Martillos",
+      "slug": "martillos",
+      "parent": 387,
+      "count": 26
+    },
+    {
+      "id": 364,
+      "name": "Máscaras soldar",
+      "slug": "mascaras-soldar",
+      "parent": 363,
+      "count": 8
+    },
+    {
+      "id": 1326,
+      "name": "Mecha de centro",
+      "slug": "mecha-de-centro",
+      "parent": 862,
+      "count": 1
+    },
+    {
+      "id": 757,
+      "name": "Mechas",
+      "slug": "mechas",
+      "parent": 756,
+      "count": 23
+    },
+    {
+      "id": 431,
+      "name": "Morsa",
+      "slug": "morsa",
+      "parent": 387,
+      "count": 11
+    },
+    {
+      "id": 623,
+      "name": "Pinturas",
+      "slug": "pinturas",
+      "parent": 0,
+      "count": 26
+    },
+    {
+      "id": 1885,
+      "name": "Pistola de Pintar",
+      "slug": "pistola-de-pintar",
+      "parent": 437,
+      "count": 2
+    },
+    {
+      "id": 1889,
+      "name": "Pistolas Aplicadoras",
+      "slug": "pistolas-aplicadoras",
+      "parent": 387,
+      "count": 2
+    },
+    {
+      "id": 1329,
+      "name": "Platos para torno",
+      "slug": "platos-para-torno",
+      "parent": 862,
+      "count": 2
+    },
+    {
+      "id": 752,
+      "name": "Poleas",
+      "slug": "poleas",
+      "parent": 0,
+      "count": 37
+    },
+    {
+      "id": 619,
+      "name": "Polipropileno / Poliuretano / Nylon",
+      "slug": "polipropileno-poliuretano-nylon",
+      "parent": 570,
+      "count": 11
+    },
+    {
+      "id": 1248,
+      "name": "Porta Herramientas",
+      "slug": "porta-herramientas",
+      "parent": 862,
+      "count": 6
+    },
+    {
+      "id": 1887,
+      "name": "Prensa",
+      "slug": "prensa",
+      "parent": 387,
+      "count": 7
+    },
+    {
+      "id": 957,
+      "name": "Prensacable",
+      "slug": "prensacable",
+      "parent": 371,
+      "count": 1
+    },
+    {
+      "id": 1273,
+      "name": "Punta aleteada",
+      "slug": "punta-aleteada",
+      "parent": 756,
+      "count": 4
+    },
+    {
+      "id": 1557,
+      "name": "Puntas artisticas",
+      "slug": "puntas-artisticas",
+      "parent": 1384,
+      "count": 1
+    },
+    {
+      "id": 1385,
+      "name": "Puntas con filo",
+      "slug": "puntas-con-filo",
+      "parent": 1384,
+      "count": 5
+    },
+    {
+      "id": 1045,
+      "name": "Puntas montadas",
+      "slug": "puntas-montadas",
+      "parent": 756,
+      "count": 49
+    },
+    {
+      "id": 587,
+      "name": "Recargues duros",
+      "slug": "recargues-duros",
+      "parent": 566,
+      "count": 4
+    },
+    {
+      "id": 1174,
+      "name": "Regatones",
+      "slug": "regatones",
+      "parent": 381,
+      "count": 3
+    },
+    {
+      "id": 396,
+      "name": "Remachadoras y Grapadoras",
+      "slug": "remachadoras-grapadoras",
+      "parent": 387,
+      "count": 13
+    },
+    {
+      "id": 1017,
+      "name": "Remaches pop",
+      "slug": "remache-pop",
+      "parent": 776,
+      "count": 1
+    },
+    {
+      "id": 630,
+      "name": "Repuestos morsa",
+      "slug": "repuestos-morsa",
+      "parent": 431,
+      "count": 5
+    },
+    {
+      "id": 1141,
+      "name": "Rieles / Carros / Estabilizadores",
+      "slug": "rieles-carros-estabilizadores",
+      "parent": 381,
+      "count": 5
+    },
+    {
+      "id": 1146,
+      "name": "Rodillos y pinceles",
+      "slug": "rodillos-y-pinceles",
+      "parent": 623,
+      "count": 4
+    },
+    {
+      "id": 448,
+      "name": "Rotomartillo",
+      "slug": "rotomartillo",
+      "parent": 407,
+      "count": 2
+    },
+    {
+      "id": 570,
+      "name": "Ruedas",
+      "slug": "ruedas",
+      "parent": 0,
+      "count": 42
+    },
+    {
+      "id": 567,
+      "name": "Rutilicos",
+      "slug": "rutilicos",
+      "parent": 566,
+      "count": 4
+    },
+    {
+      "id": 1930,
+      "name": "SDS",
+      "slug": "sds",
+      "parent": 757,
+      "count": 4
+    },
+    {
+      "id": 1384,
+      "name": "Seguridad perimetral",
+      "slug": "seguridad-perimetral",
+      "parent": 0,
+      "count": 11
+    },
+    {
+      "id": 1043,
+      "name": "Seguridad/Protección Personal",
+      "slug": "seguridad-proteccion-personal",
+      "parent": 0,
+      "count": 19
+    },
+    {
+      "id": 1924,
+      "name": "Set de herramientas",
+      "slug": "set-de-herramientas",
+      "parent": 387,
+      "count": 3
+    },
+    {
+      "id": 1171,
+      "name": "Sierra copa",
+      "slug": "sierra-copa",
+      "parent": 756,
+      "count": 3
+    },
+    {
+      "id": 1118,
+      "name": "Sierra de mano",
+      "slug": "sierra-de-mano",
+      "parent": 387,
+      "count": 5
+    },
+    {
+      "id": 410,
+      "name": "Sierras",
+      "slug": "sierras",
+      "parent": 407,
+      "count": 3
+    },
+    {
+      "id": 1122,
+      "name": "Sogas",
+      "slug": "sogas",
+      "parent": 371,
+      "count": 1
+    },
+    {
+      "id": 366,
+      "name": "Soldadoras",
+      "slug": "soldadoras",
+      "parent": 363,
+      "count": 9
+    },
+    {
+      "id": 363,
+      "name": "Soldadura",
+      "slug": "soldadura",
+      "parent": 0,
+      "count": 130
+    },
+    {
+      "id": 398,
+      "name": "Soportes magneticos",
+      "slug": "soportes-magneticos",
+      "parent": 363,
+      "count": 6
+    },
+    {
+      "id": 416,
+      "name": "Taladros",
+      "slug": "taladros-herramientas-a-bateria",
+      "parent": 415,
+      "count": 6
+    },
+    {
+      "id": 408,
+      "name": "Taladros",
+      "slug": "taladros",
+      "parent": 407,
+      "count": 10
+    },
+    {
+      "id": 1222,
+      "name": "Tarugos",
+      "slug": "tarugos",
+      "parent": 776,
+      "count": 1
+    },
+    {
+      "id": 1922,
+      "name": "Tejidos mosquiteros",
+      "slug": "tejidos-mosquiteros",
+      "parent": 381,
+      "count": 2
+    },
+    {
+      "id": 429,
+      "name": "Tenazas",
+      "slug": "tenazas",
+      "parent": 387,
+      "count": 6
+    },
+    {
+      "id": 600,
+      "name": "Tig / Mig-Mag",
+      "slug": "tig-mig-mag",
+      "parent": 565,
+      "count": 40
+    },
+    {
+      "id": 699,
+      "name": "Tijeras y Cutters",
+      "slug": "tijeras-cutters",
+      "parent": 387,
+      "count": 22
+    },
+    {
+      "id": 862,
+      "name": "Torneria",
+      "slug": "torneria",
+      "parent": 0,
+      "count": 65
+    },
+    {
+      "id": 1092,
+      "name": "Tornillos",
+      "slug": "tornillos",
+      "parent": 776,
+      "count": 8
+    },
+    {
+      "id": 672,
+      "name": "Triple",
+      "slug": "triple",
+      "parent": 623,
+      "count": 6
+    },
+    {
+      "id": 933,
+      "name": "Tuercas",
+      "slug": "tuercas",
+      "parent": 776,
+      "count": 1
+    },
+    {
+      "id": 777,
+      "name": "Varillas roscadas",
+      "slug": "varillas-roscadas",
+      "parent": 776,
+      "count": 1
+    },
+    {
+      "id": 1395,
+      "name": "Widia",
+      "slug": "widia",
+      "parent": 757,
+      "count": 5
+    }
+  ],
+  "Attributes": [
+    "brand",
+    "Medidas",
+    "kilos",
+    "modelo",
+    "COLOR",
+    "Tono"
+  ],
+  "SampleSkus": [
+    {
+      "id": 37010,
+      "name": "TALADRO DE COLUMNA 20 MM (3/4) LUSQTOFF (TB-20)",
+      "sku": "965 000 160 000"
+    },
+    {
+      "id": 37007,
+      "name": "SET DE CUCHILLOS PROFESIONALES PARA COCINA LUSQTOFF",
+      "sku": "980 000 600 000"
+    },
+    {
+      "id": 36933,
+      "name": "PERFILES IPN Y UPN",
+      "sku": "999 999 999-5"
+    },
+    {
+      "id": 36927,
+      "name": "CAÑOS ESTRUCTURALES DE SECCION CUADRADA, REDONDA O RECTANGULAR",
+      "sku": "999 999 999-4"
+    },
+    {
+      "id": 36922,
+      "name": "EJES ACERO SAE 1045 Y SAE 4140 Y CAÑOS PARED GRUESA",
+      "sku": "999 999 999-3"
+    },
+    {
+      "id": 36915,
+      "name": "CHAPAS LISAS (CHAPAS NEGRAS LAMINADO FRIO, CHAPAS NEGRAS LAMINADO CALIENTE, CHAPAS GALVANIZADAS, CHAPAS ACERO SAE 1045)",
+      "sku": "999 999 999-2"
+    },
+    {
+      "id": 36909,
+      "name": "HIERROS NEGROS (ÁNGULOS, LISOS, HIERROS &#8221;T&#8221;, PLANCHUELAS, CUADRADOS, EXAGONALES)",
+      "sku": "999 999 999-1"
+    },
+    {
+      "id": 36903,
+      "name": "CEPILLO FLAP PARA TALADRO 50 MM",
+      "sku": "975 400 170 000 (V)"
+    },
+    {
+      "id": 36901,
+      "name": "BISAGRAS 32 X 20 X 4.8 (705) PERNO 12 MM",
+      "sku": "213 070 009 000"
+    },
+    {
+      "id": 36899,
+      "name": "BISAGRA 25 X 20 X 3.2 (700) PERNO 10 MM",
+      "sku": "213 070 008 000"
+    }
+  ]
+}

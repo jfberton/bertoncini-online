@@ -1,0 +1,184 @@
+/* Custom Modern Industrial Styles for Bertoncini Online */
+:root {
+  --color-brand-yellow: #FFC107;
+  --color-brand-yellow-hover: #E5AC00;
+  --color-brand-yellow-light: #FFF8E1;
+  --color-brand-dark: #0F1216;
+  --color-brand-darker: #090B0D;
+  --color-brand-card: #15191F;
+  --color-brand-border: #232A34;
+  --color-brand-accent: #FFA000;
+  --color-ml-yellow: #FFE600;
+  --color-ml-blue: #2968C8;
+}
+
+/* Light & Dark Transitions */
+html {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth Heading Typography */
+h1, h2, h3, h4, .font-heading {
+  letter-spacing: -0.02em;
+}
+
+/* Industrial Stripes Effect */
+.industrial-stripe {
+  background: repeating-linear-gradient(
+    45deg,
+    #FFC107,
+    #FFC107 12px,
+    #12151A 12px,
+    #12151A 24px
+  );
+}
+
+.industrial-stripe-subtle {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 193, 7, 0.08),
+    rgba(255, 193, 7, 0.08) 12px,
+    transparent 12px,
+    transparent 24px
+  );
+}
+
+/* Mercado Libre Gradient Card */
+.ml-card-gradient {
+  background: linear-gradient(135deg, #FFF059 0%, #FFE600 50%, #FFD700 100%);
+}
+
+.dark .ml-card-gradient {
+  background: linear-gradient(135deg, #242200 0%, #15191F 100%);
+  border: 1px solid rgba(255, 230, 0, 0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0F1216;
+}
+
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFC107;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFA000;
+}
+
+/* Glassmorphism Classes */
+.glass-dark {
+  background: rgba(15, 18, 22, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Badge & Glows */
+.glow-yellow {
+  box-shadow: 0 0 25px rgba(255, 193, 7, 0.35);
+}
+
+.glow-yellow-sm {
+  box-shadow: 0 0 12px rgba(255, 193, 7, 0.25);
+}
+
+.glow-ml {
+  box-shadow: 0 4px 20px rgba(255, 230, 0, 0.35);
+}
+
+/* Social Button Gradients & Hover Effects */
+.btn-social-instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: white !important;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(214, 36, 159, 0.35);
+}
+
+.btn-social-facebook:hover {
+  background: #1877F2;
+  color: white !important;
+  border-color: #1877F2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(24, 119, 242, 0.35);
+}
+
+.btn-social-whatsapp:hover {
+  background: #25D366;
+  color: white !important;
+  border-color: #25D366;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+}
+
+.btn-social-ml:hover {
+  background: #FFE600;
+  color: #111 !important;
+  border-color: #FFE600;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 230, 0, 0.35);
+}
+
+/* Product Card Hover Effect */
+.product-card {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px -5px rgba(0, 0, 0, 0.12), 0 0 16px rgba(255, 193, 7, 0.18);
+}
+
+.dark .product-card:hover {
+  box-shadow: 0 14px 30px -5px rgba(0, 0, 0, 0.6), 0 0 16px rgba(255, 193, 7, 0.22);
+}
+
+/* Category Pills Smooth Scroll */
+.cat-pill {
+  transition: all 0.2s ease;
+}
+
+.cat-pill:hover {
+  transform: translateY(-1px);
+}
+
+/* Print Sheet Styling for Orders */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #print-area, #print-area * {
+    visibility: visible;
+  }
+  #print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white;
+    color: black;
+    padding: 20px;
+  }
+}

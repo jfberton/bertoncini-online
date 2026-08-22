@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 38" width="160" height="38" fill="none">
+  <!-- Yellow Handshake Icon Container -->
+  <g transform="translate(0, 0)">
+    <!-- Handshake SVG -->
+    <path d="M18.8 2.2C9.5 2.2 2 9.7 2 19s7.5 16.8 16.8 16.8 16.8-7.5 16.8-16.8S28.1 2.2 18.8 2.2z" fill="#FFE600"/>
+    <!-- Handshake Drawing -->
+    <path d="M13.2 22.8l-3.6-3.6c-.8-.8-.8-2 0-2.8.8-.8 2-.8 2.8 0l2.2 2.2 5.8-5.8c.8-.8 2-.8 2.8 0 .8.8.8 2 0 2.8l-7.2 7.2c-.8.8-2 .8-2.8 0z" fill="#2D3277"/>
+    <path d="M24.4 15.2l-2.2 2.2-1.4-1.4 2.2-2.2c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4z" fill="#2D3277"/>
+    <path d="M21.2 24.4l-4-4 1.4-1.4 4 4c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0z" fill="#2D3277"/>
+    <path d="M23.6 22l-4-4 1.4-1.4 4 4c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0z" fill="#2D3277"/>
+    <path d="M26 19.6l-4-4 1.4-1.4 4 4c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0z" fill="#2D3277"/>
+  </g>
+  <!-- Mercado Libre Typography -->
+  <g fill="#2D3277" font-family="system-ui, -apple-system, 'Proxima Nova', sans-serif" font-weight="700">
+    <text x="44" y="24" font-size="16" letter-spacing="-0.5">mercado</text>
+    <text x="110" y="24" font-size="16" font-weight="300" letter-spacing="-0.5">libre</text>
+  </g>
+</svg>
