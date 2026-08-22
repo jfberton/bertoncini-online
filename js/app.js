@@ -691,20 +691,20 @@ function renderProductsGrid() {
     const measureAttr = product.attributes ? product.attributes.find(a => a.name.toLowerCase().includes('medid')) : null;
     
     html += `
-      <div class="product-card group relative bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl dark:shadow-none hover:border-yellow-400 transition-all duration-300">
+      <div class="product-card group relative bg-white dark:bg-[#161A20] border border-zinc-200 dark:border-zinc-800/90 rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl dark:shadow-none hover:border-yellow-400 transition-all duration-300 p-2.5 sm:p-3.5">
         
         <!-- Top Badge Bar -->
-        <div class="p-3 pb-0 flex items-center justify-between gap-2 z-10">
-          <span class="inline-flex items-center px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-300 dark:border-zinc-700 text-[11px] font-mono font-medium tracking-tight truncate max-w-[140px]">
+        <div class="flex items-center justify-between gap-1.5 mb-2 z-10">
+          <span class="inline-flex items-center px-1.5 sm:px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700 text-[9px] sm:text-[11px] font-mono font-medium tracking-tight truncate max-w-[85px] sm:max-w-[130px]">
             SKU: ${escapeHtml(product.sku)}
           </span>
-          <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-yellow-400/20 text-yellow-700 dark:text-yellow-400 border border-yellow-400/30">
+          <span class="text-[8px] sm:text-[10px] font-bold uppercase tracking-wider px-1.5 sm:px-2 py-0.5 rounded bg-yellow-400/20 text-yellow-700 dark:text-yellow-400 border border-yellow-400/30 truncate max-w-[75px] sm:max-w-[110px]">
             ${escapeHtml(product.brand || 'Bertoncini')}
           </span>
         </div>
 
         <!-- Image Container -->
-        <div class="relative w-full aspect-square bg-zinc-50 dark:bg-zinc-950/80 p-4 flex items-center justify-center overflow-hidden cursor-pointer" onclick="openProductModal(${product.id})">
+        <div class="relative w-full aspect-square bg-zinc-50 dark:bg-zinc-950/80 p-2.5 sm:p-4 rounded-xl flex items-center justify-center overflow-hidden cursor-pointer" onclick="openProductModal(${product.id})">
           <img 
             src="${escapeHtml(product.image)}" 
             alt="${escapeHtml(product.name)}" 
@@ -712,30 +712,53 @@ function renderProductsGrid() {
             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'"
             class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
           />
-          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity hidden sm:flex items-center justify-center gap-2">
             <span class="px-3 py-1.5 bg-yellow-400 text-black text-xs font-bold rounded-lg shadow-lg flex items-center gap-1">
               <i data-lucide="eye" class="w-3.5 h-3.5"></i> Ficha Técnica
             </span>
           </div>
           ${isCustomCutEligible ? `
-            <span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-500/30 text-[10px] font-semibold flex items-center gap-1">
-              <i data-lucide="scissors" class="w-2.5 h-2.5"></i> Corte a medida
+            <span class="absolute bottom-1.5 left-1.5 px-1.5 sm:px-2 py-0.5 rounded bg-amber-400/25 text-amber-900 dark:text-amber-300 border border-amber-400/40 text-[9px] sm:text-[10px] font-bold flex items-center gap-1 shadow-sm backdrop-blur-sm">
+              <i data-lucide="scissors" class="w-2.5 h-2.5"></i>
+              <span class="hidden sm:inline">Corte a medida</span>
+              <span class="sm:hidden">Corte</span>
             </span>
           ` : ''}
         </div>
 
         <!-- Product Content -->
-        <div class="p-4 flex-1 flex flex-col justify-between">
+        <div class="mt-2 flex-1 flex flex-col justify-between">
           <div>
-            <span class="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium block mb-1 truncate">
+            <span class="text-[9px] sm:text-[11px] text-zinc-500 dark:text-zinc-400 font-medium block truncate">
               ${escapeHtml(product.category)}
             </span>
-            <h3 class="text-sm font-bold text-zinc-900 dark:text-white leading-snug group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors line-clamp-2 cursor-pointer" onclick="openProductModal(${product.id})">
+            <h3 class="text-xs sm:text-sm font-bold text-zinc-900 dark:text-white leading-tight sm:leading-snug group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors line-clamp-2 min-h-[30px] sm:min-h-[40px] mt-0.5 cursor-pointer" onclick="openProductModal(${product.id})" title="${escapeHtml(product.name)}">
               ${escapeHtml(product.name)}
             </h3>
           </div>
 
-          <div class="mt-3">
+          <!-- ================= MOBILE CARD ACTIONS (Clean Mercado Libre 2-col style) ================= -->
+          <div class="mt-2.5 pt-2 border-t border-zinc-100 dark:border-zinc-800 sm:hidden flex flex-col gap-1.5">
+            <div class="grid grid-cols-2 gap-1.5">
+              <button 
+                onclick="openProductModal(${product.id})"
+                class="w-full py-2 px-1 bg-yellow-400 hover:bg-yellow-500 text-black text-[11px] font-black rounded-xl transition-all flex items-center justify-center gap-1 shadow-sm active:scale-95">
+                <i data-lucide="plus-circle" class="w-3.5 h-3.5 shrink-0"></i>
+                <span class="truncate">Al Pedido</span>
+              </button>
+
+              <button 
+                onclick="openMercadoLibreProduct(${product.id})" 
+                class="w-full py-2 px-1 bg-[#FFE600]/20 hover:bg-[#FFE600] text-zinc-900 dark:text-yellow-300 hover:text-black border border-[#FFE600]/40 rounded-xl text-[11px] font-bold transition-all flex items-center justify-center gap-1 active:scale-95"
+                title="Buscar en Mercado Libre">
+                <img src="assets/images/mercadolibre-handshake.png" alt="ML" class="w-3.5 h-3.5 object-contain shrink-0">
+                <span class="truncate">Tienda ML</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- ================= DESKTOP CARD ACTIONS (Rich inline controls) ================= -->
+          <div class="mt-3 hidden sm:block">
             <!-- Measures selector if available -->
             ${measureAttr && measureAttr.options && measureAttr.options.length > 0 ? `
               <div class="mb-2">
@@ -756,7 +779,7 @@ function renderProductsGrid() {
               />
             </div>
 
-            <!-- Card Actions -->
+            <!-- Card Action Buttons -->
             <div class="pt-2 border-t border-zinc-100 dark:border-zinc-800 flex flex-col gap-2">
               <div class="flex items-center gap-2">
                 <div class="flex items-center bg-zinc-100 dark:bg-zinc-800 rounded-lg border border-zinc-300 dark:border-zinc-700 overflow-hidden">
@@ -771,7 +794,7 @@ function renderProductsGrid() {
 
                 <button 
                   onclick="addProductFromCard(${product.id})"
-                  class="flex-1 px-3 py-2 bg-yellow-400 hover:bg-yellow-500 text-black text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-1.5 shadow-md active:scale-95">
+                  class="flex-1 px-3 py-2 bg-yellow-400 hover:bg-yellow-500 text-black text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-1.5 shadow-md active:scale-95 cursor-pointer">
                   <i data-lucide="plus-circle" class="w-4 h-4"></i>
                   <span>Al Pedido</span>
                 </button>
@@ -780,7 +803,7 @@ function renderProductsGrid() {
               <!-- ML Search Button -->
               <button 
                 onclick="openMercadoLibreProduct(${product.id})" 
-                class="w-full py-1.5 px-2 bg-[#FFE600]/15 hover:bg-[#FFE600] text-zinc-800 dark:text-yellow-300 hover:text-black border border-[#FFE600]/40 rounded-lg text-[11px] font-bold transition-all flex items-center justify-center gap-1.5 active:scale-95 group/ml"
+                class="w-full py-1.5 px-2 bg-[#FFE600]/15 hover:bg-[#FFE600] text-zinc-800 dark:text-yellow-300 hover:text-black border border-[#FFE600]/40 rounded-lg text-[11px] font-bold transition-all flex items-center justify-center gap-1.5 active:scale-95 group/ml cursor-pointer"
                 title="Buscar este artículo en nuestra tienda oficial de Mercado Libre">
                 <img src="assets/images/mercadolibre-handshake.png" alt="ML" class="w-3.5 h-3.5 object-contain">
                 <span>Buscar en nuestra tienda</span>

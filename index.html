@@ -710,8 +710,8 @@
         </button>
       </div>
 
-      <!-- Products Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="products-grid">
+      <!-- Products Grid (2-Column on Mobile like Mercado Libre, 3-4 on Desktop) -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-6" id="products-grid">
         <!-- Injected by JS -->
       </div>
 
@@ -1112,7 +1112,7 @@
   </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="bg-zinc-950 text-zinc-400 text-xs py-14 border-t border-zinc-800">
+  <footer class="bg-zinc-950 text-zinc-400 text-xs pt-14 pb-24 md:pb-14 border-t border-zinc-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-zinc-800/80">
         
@@ -1239,11 +1239,47 @@
     </div>
   </footer>
 
-  <!-- ================= FLOATING BACK TO TOP / HOME BUTTON (BOTTOM-LEFT) ================= -->
+  <!-- ================= MOBILE APP BOTTOM NAVIGATION BAR (Mercado Libre Style) ================= -->
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-[#0F1216]/95 backdrop-blur-xl border-t border-zinc-200 dark:border-zinc-800 px-3 py-1.5 shadow-2xl flex items-center justify-around">
+    <!-- Inicio -->
+    <a href="#inicio" class="flex flex-col items-center justify-center py-1 px-2 text-zinc-700 dark:text-zinc-300 hover:text-yellow-500 dark:hover:text-yellow-400 active:scale-90 transition-all">
+      <i data-lucide="home" class="w-5 h-5"></i>
+      <span class="text-[10px] font-bold mt-0.5">Inicio</span>
+    </a>
+
+    <!-- Catálogo -->
+    <a href="#catalogo" class="flex flex-col items-center justify-center py-1 px-2 text-zinc-700 dark:text-zinc-300 hover:text-yellow-500 dark:hover:text-yellow-400 active:scale-90 transition-all">
+      <i data-lucide="layout-grid" class="w-5 h-5"></i>
+      <span class="text-[10px] font-bold mt-0.5">Catálogo</span>
+    </a>
+
+    <!-- Mi Pedido (Cart with badge) -->
+    <button onclick="toggleCartDrawer()" class="relative flex flex-col items-center justify-center py-1 px-3 text-yellow-600 dark:text-yellow-400 active:scale-90 transition-all">
+      <div class="relative">
+        <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+        <span class="cart-badge-count hidden absolute -top-1.5 -right-2 px-1.5 py-0.2 bg-black text-yellow-400 text-[9px] font-black rounded-full font-mono border border-yellow-400">0</span>
+      </div>
+      <span class="text-[10px] font-black mt-0.5 uppercase tracking-tight">Mi Pedido</span>
+    </button>
+
+    <!-- Tienda Mercado Libre -->
+    <button onclick="openMercadoLibreBanner()" class="flex flex-col items-center justify-center py-1 px-2 text-zinc-700 dark:text-zinc-300 hover:text-yellow-500 dark:hover:text-yellow-400 active:scale-90 transition-all">
+      <img src="assets/images/mercadolibre-handshake.png" alt="ML" class="w-5 h-5 object-contain">
+      <span class="text-[10px] font-bold mt-0.5">Tienda ML</span>
+    </button>
+
+    <!-- WhatsApp Direct -->
+    <a href="https://wa.me/5493624537266?text=Hola%20Bertoncini!%20Quiero%20hacer%20una%20consulta" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center py-1 px-2 text-emerald-600 dark:text-emerald-400 active:scale-90 transition-all">
+      <i data-lucide="message-circle" class="w-5 h-5"></i>
+      <span class="text-[10px] font-bold mt-0.5">WhatsApp</span>
+    </a>
+  </nav>
+
+  <!-- ================= FLOATING BACK TO TOP / HOME BUTTON (DESKTOP ONLY) ================= -->
   <button 
     id="floating-home-btn"
     onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-    class="fixed bottom-6 right-6 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-yellow-400 hover:bg-yellow-300 text-black shadow-xl shadow-yellow-400/30 hover:shadow-yellow-400/50 flex items-center justify-center transition-all duration-300 transform opacity-0 pointer-events-none translate-y-6 hover:scale-110 active:scale-95 border-2 border-black/10 dark:border-white/20 group"
+    class="hidden md:flex fixed bottom-6 right-6 z-40 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-yellow-400 hover:bg-yellow-300 text-black shadow-xl shadow-yellow-400/30 hover:shadow-yellow-400/50 items-center justify-center transition-all duration-300 transform opacity-0 pointer-events-none translate-y-6 hover:scale-110 active:scale-95 border-2 border-black/10 dark:border-white/20 group"
     title="Ir al inicio"
     aria-label="Volver arriba / Inicio"
   >
