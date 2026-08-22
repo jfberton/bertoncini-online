@@ -6,11 +6,12 @@
 
 // Configuration
 const CONFIG = {
-  WHATSAPP_PHONE: '5493624608000', // Bertoncini Sales WhatsApp
+  WHATSAPP_PHONE: '5493624537266', // Bertoncini Sales WhatsApp
   ML_STORE_URL: 'https://www.mercadolibre.com.ar/pagina/higiniobertonciniyciasa',
   ML_SEARCH_BASE: 'https://listado.mercadolibre.com.ar/pagina/higiniobertonciniyciasa/',
   STORE_NAME: 'Bertoncini Herramientas & Suministros Industriales',
-  LOCATION: 'Av. Alvear 2100, Resistencia, Chaco',
+  LOCATION: 'Santiago del Estero 2415 (Ruta 11), Resistencia - Chaco',
+  GA_MEASUREMENT_ID: 'G-LR4D78SGW8',
   DEFAULT_PAGE_SIZE: 24
 };
 
