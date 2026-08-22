@@ -1492,6 +1492,8 @@ function renderAnalyticsDashboard() {
       </div>
 
     </div>
+  `;
+
   lucide.createIcons();
 }
 
