@@ -1340,11 +1340,6 @@ window.closeAnalyticsModal = function() {
   }
 };
 
-window.switchAnalyticsTab = function(tab) {
-  state.analyticsTab = tab;
-  renderAnalyticsDashboard();
-};
-
 window.saveGoogleAnalyticsId = function() {
   const input = document.getElementById('ga-measurement-input');
   if (input) {
@@ -1356,273 +1351,147 @@ function renderAnalyticsDashboard() {
   const container = document.getElementById('analytics-dashboard-content');
   if (!container) return;
 
-  const currentTab = state.analyticsTab || 'local';
-  const data = Analytics.getData();
   const gaId = Analytics.getGaId();
-  const totalMlBanner = data.totalMlBannerClicks || 0;
-  const totalMlProducts = data.totalMlProductClicks || 0;
-  const totalMlClicks = totalMlBanner + totalMlProducts;
-  const conversionRate = data.totalPageViews > 0 ? ((totalMlClicks / data.totalPageViews) * 100).toFixed(1) : '0';
-
-  const topProducts = Object.values(data.productClicks || {})
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 8);
 
   container.innerHTML = `
-    <!-- Tab Switcher -->
-    <div class="flex items-center gap-2 border-b border-zinc-200 dark:border-zinc-800 pb-4 mb-6">
-      <button 
-        onclick="switchAnalyticsTab('local')" 
-        class="px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider transition-all flex items-center gap-2 ${currentTab === 'local' ? 'bg-yellow-400 text-black shadow-md' : 'bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white'}">
-        <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
-        <span>Métricas Locales (Sesión)</span>
-      </button>
-
-      <button 
-        onclick="switchAnalyticsTab('ga4')" 
-        class="px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider transition-all flex items-center gap-2 ${currentTab === 'ga4' ? 'bg-yellow-400 text-black shadow-md' : 'bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white'}">
-        <i data-lucide="globe" class="w-4 h-4"></i>
-        <span>Google Analytics 4 (Global)</span>
-        ${gaId ? `<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>` : `<span class="w-2 h-2 rounded-full bg-amber-400"></span>`}
-      </button>
-    </div>
-
-    ${currentTab === 'local' ? `
-      <!-- ================= LOCAL SESSION TAB ================= -->
-      <!-- Top Stat Cards -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-        
-        <div class="p-4 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-          <div class="flex items-center justify-between text-zinc-500 dark:text-zinc-400 text-xs mb-1">
-            <span>Visitas Totales</span>
-            <i data-lucide="eye" class="w-4 h-4 text-yellow-500"></i>
-          </div>
-          <div class="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white font-heading">${data.totalPageViews || 0}</div>
-          <div class="text-[10px] text-zinc-400 mt-1">Sesiones registradas</div>
-        </div>
-
-        <div class="p-4 rounded-2xl bg-[#FFE600]/10 border border-[#FFE600]/30">
-          <div class="flex items-center justify-between text-yellow-800 dark:text-yellow-400 text-xs mb-1">
-            <span>Clicks a Mercado Libre</span>
-            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-          </div>
-          <div class="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white font-heading">${totalMlClicks}</div>
-          <div class="text-[10px] text-yellow-700 dark:text-yellow-400 mt-1">Banner: ${totalMlBanner} | Productos: ${totalMlProducts}</div>
-        </div>
-
-        <div class="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30">
-          <div class="flex items-center justify-between text-emerald-700 dark:text-emerald-400 text-xs mb-1">
-            <span>Pedidos WhatsApp</span>
-            <i data-lucide="message-circle" class="w-4 h-4"></i>
-          </div>
-          <div class="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white font-heading">${data.totalWhatsAppOrders || 0}</div>
-          <div class="text-[10px] text-emerald-600 dark:text-emerald-400 mt-1">Cotizaciones generadas</div>
-        </div>
-
-        <div class="p-4 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-          <div class="flex items-center justify-between text-zinc-500 dark:text-zinc-400 text-xs mb-1">
-            <span>Artículos al Carrito</span>
-            <i data-lucide="shopping-cart" class="w-4 h-4 text-blue-500"></i>
-          </div>
-          <div class="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white font-heading">${data.totalCartAdds || 0}</div>
-          <div class="text-[10px] text-zinc-400 mt-1">Interacciones de catálogo</div>
-        </div>
-
-      </div>
-
-      <!-- Products Searched in ML Store & Activity Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-2">
-        
-        <!-- Top searched items in ML -->
-        <div class="p-5 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-          <h4 class="text-sm font-bold text-zinc-900 dark:text-white mb-3 flex items-center gap-2">
-            <i data-lucide="flame" class="w-4 h-4 text-amber-500"></i>
-            <span>Artículos Más Buscados en Tienda ML</span>
-          </h4>
-
-          ${topProducts.length === 0 ? `
-            <p class="text-xs text-zinc-400 italic py-6 text-center">Aún no se registraron búsquedas directas en artículos.</p>
-          ` : `
-            <div class="space-y-2 max-h-48 overflow-y-auto pr-1">
-              ${topProducts.map((p, idx) => `
-                <div class="flex items-center justify-between p-2 rounded-lg bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-xs">
-                  <div class="truncate mr-2">
-                    <span class="font-mono text-yellow-600 dark:text-yellow-400 font-bold mr-1">#${idx + 1}</span>
-                    <span class="font-bold text-zinc-800 dark:text-zinc-200">${escapeHtml(p.name)}</span>
-                  </div>
-                  <span class="px-2 py-0.5 rounded-full bg-yellow-400/20 text-yellow-800 dark:text-yellow-400 text-xs font-bold shrink-0">
-                    ${p.count} ${p.count === 1 ? 'búsqueda' : 'búsquedas'}
-                  </span>
-                </div>
-              `).join('')}
+    <!-- ================= GOOGLE ANALYTICS 4 GLOBAL TRACKING HUB ================= -->
+    <div class="space-y-6">
+      
+      <!-- Status Card & Connection Form -->
+      <div class="p-4 sm:p-6 rounded-3xl bg-zinc-50 dark:bg-zinc-900 border-2 ${gaId ? 'border-emerald-500/50 bg-emerald-500/5' : 'border-amber-400/50 bg-amber-400/5'} shadow-sm">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-2xl ${gaId ? 'bg-emerald-500 text-white' : 'bg-amber-400 text-black'} flex items-center justify-center font-bold shadow-md shrink-0">
+              <i data-lucide="${gaId ? 'check-circle-2' : 'globe'}" class="w-6 h-6"></i>
             </div>
-          `}
-        </div>
-
-        <!-- Recent Activity Log -->
-        <div class="p-5 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-          <div class="flex items-center justify-between mb-3">
-            <h4 class="text-sm font-bold text-zinc-900 dark:text-white flex items-center gap-2">
-              <i data-lucide="activity" class="w-4 h-4 text-emerald-500"></i>
-              <span>Actividad en Tiempo Real</span>
-            </h4>
-            <button onclick="Analytics.resetStats()" class="text-xs text-red-500 hover:underline flex items-center gap-1">
-              <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Reiniciar
-            </button>
-          </div>
-
-          <div class="max-h-48 overflow-y-auto space-y-1.5 pr-1 text-xs">
-            ${data.history && data.history.length > 0 ? data.history.map(ev => `
-              <div class="flex items-center justify-between py-2 px-3 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800/80">
-                <span class="text-zinc-800 dark:text-zinc-200 font-medium">${escapeHtml(ev.title)}</span>
-                <span class="text-[10px] text-zinc-400 font-mono">${new Date(ev.time).toLocaleTimeString('es-AR')}</span>
-              </div>
-            `).join('') : `
-              <p class="text-xs text-zinc-400 italic text-center py-6">No hay eventos registrados aún.</p>
-            `}
-          </div>
-        </div>
-
-      </div>
-    ` : `
-      <!-- ================= GOOGLE ANALYTICS 4 TAB ================= -->
-      <div class="space-y-6">
-        
-        <!-- Status Card & Connection Form -->
-        <div class="p-5 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border ${gaId ? 'border-emerald-500/40 bg-emerald-500/5' : 'border-amber-500/40 bg-amber-500/5'}">
-          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-2xl ${gaId ? 'bg-emerald-500 text-white' : 'bg-amber-400 text-black'} flex items-center justify-center font-bold shadow-md">
-                <i data-lucide="${gaId ? 'check-circle-2' : 'alert-circle'}" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <h4 class="text-sm font-heading font-black text-zinc-900 dark:text-white">
-                  ${gaId ? `Google Analytics 4 Conectado (${escapeHtml(gaId)})` : 'Google Analytics 4 (Sin Conectar)'}
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h4 class="text-base font-heading font-black text-zinc-900 dark:text-white">
+                  ${gaId ? `Google Analytics 4 Global` : 'Google Analytics 4 Global (Sin Configurar)'}
                 </h4>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400">
-                  ${gaId ? 'Transmitiendo métricas globales de visitas, búsquedas en Mercado Libre y pedidos en vivo.' : 'Configurá tu ID de medición para recopilar estadísticas globales de todos los visitantes en tiempo real.'}
-                </p>
+                ${gaId ? `<span class="px-2 py-0.5 rounded-full bg-emerald-500 text-white text-[10px] font-mono font-bold">${escapeHtml(gaId)}</span>` : ''}
               </div>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">
+                ${gaId ? 'Recopilando visitas globales, clics a la tienda de Mercado Libre y pedidos de todos los usuarios.' : 'Ingresá tu ID de medición para registrar todas las visitas y clics globales en tiempo real.'}
+              </p>
             </div>
+          </div>
 
+          ${gaId ? `
+            <a 
+              href="https://analytics.google.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="w-full sm:w-auto px-4 py-2.5 bg-yellow-400 hover:bg-yellow-500 text-black font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 shrink-0 active:scale-95">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+              <span>Abrir en Google Analytics</span>
+            </a>
+          ` : ''}
+        </div>
+
+        <!-- GA ID Input Box -->
+        <div class="flex flex-col sm:flex-row items-center gap-2.5 pt-3 border-t border-zinc-200 dark:border-zinc-800">
+          <div class="relative flex-1 w-full">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-zinc-400 text-xs font-mono font-bold">ID:</span>
+            <input 
+              type="text" 
+              id="ga-measurement-input" 
+              value="${escapeHtml(gaId)}" 
+              placeholder="Ej: G-XXXXXXXXXX" 
+              class="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 text-xs font-mono text-zinc-900 dark:text-white rounded-xl focus:border-yellow-400 focus:outline-none"
+            />
+          </div>
+          <div class="flex items-center gap-2 w-full sm:w-auto">
+            <button 
+              onclick="saveGoogleAnalyticsId()" 
+              class="flex-1 sm:flex-none px-5 py-2.5 bg-yellow-400 hover:bg-yellow-500 text-black font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm active:scale-95 cursor-pointer">
+              ${gaId ? 'Actualizar ID' : 'Conectar GA4'}
+            </button>
             ${gaId ? `
-              <a 
-                href="https://analytics.google.com/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="px-4 py-2.5 bg-yellow-400 hover:bg-yellow-500 text-black font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center gap-1.5 shrink-0">
-                <i data-lucide="external-link" class="w-4 h-4"></i>
-                <span>Ver en Google Analytics</span>
-              </a>
+              <button 
+                onclick="Analytics.setGaId('')" 
+                class="px-3 py-2.5 bg-zinc-200 dark:bg-zinc-800 hover:bg-red-500 hover:text-white text-zinc-700 dark:text-zinc-300 font-bold text-xs rounded-xl transition-colors cursor-pointer" title="Desconectar">
+                Desvincular
+              </button>
             ` : ''}
           </div>
-
-          <!-- GA ID Input Box -->
-          <div class="flex flex-col sm:flex-row items-center gap-2.5 pt-3 border-t border-zinc-200 dark:border-zinc-800">
-            <div class="relative flex-1 w-full">
-              <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-zinc-400 text-xs font-mono font-bold">ID:</span>
-              <input 
-                type="text" 
-                id="ga-measurement-input" 
-                value="${escapeHtml(gaId)}" 
-                placeholder="Ej: G-XXXXXXXXXX" 
-                class="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 text-xs font-mono text-zinc-900 dark:text-white rounded-xl focus:border-yellow-400 focus:outline-none"
-              />
-            </div>
-            <div class="flex items-center gap-2 w-full sm:w-auto">
-              <button 
-                onclick="saveGoogleAnalyticsId()" 
-                class="flex-1 sm:flex-none px-5 py-2.5 bg-yellow-400 hover:bg-yellow-500 text-black font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm">
-                Guardar ID
-              </button>
-              ${gaId ? `
-                <button 
-                  onclick="Analytics.setGaId('')" 
-                  class="px-3 py-2.5 bg-zinc-200 dark:bg-zinc-800 hover:bg-red-500 hover:text-white text-zinc-700 dark:text-zinc-300 font-bold text-xs rounded-xl transition-colors" title="Desconectar">
-                  Desvincular
-                </button>
-              ` : ''}
-            </div>
-          </div>
         </div>
-
-        <!-- Custom GA4 Events Table -->
-        <div class="p-5 rounded-2xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-          <h4 class="text-sm font-bold text-zinc-900 dark:text-white mb-2 flex items-center gap-2">
-            <i data-lucide="zap" class="w-4 h-4 text-yellow-500"></i>
-            <span>Eventos de Conversión Automáticos en GA4</span>
-          </h4>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400 mb-4">
-            El catálogo de Bertoncini ya tiene instrumentados estos 6 eventos estándar de Google Analytics:
-          </p>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-            
-            <div class="p-3 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-start gap-2.5">
-              <span class="w-2 h-2 rounded-full bg-blue-500 mt-1.5 shrink-0"></span>
-              <div>
-                <strong class="font-mono text-zinc-900 dark:text-white">page_view</strong>
-                <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">Visitas y navegación del catálogo con URL y título.</p>
-              </div>
-            </div>
-
-            <div class="p-3 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-start gap-2.5">
-              <span class="w-2 h-2 rounded-full bg-yellow-500 mt-1.5 shrink-0"></span>
-              <div>
-                <strong class="font-mono text-zinc-900 dark:text-white">select_content (ML Banner)</strong>
-                <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">Clics hacia la Tienda Oficial de Mercado Libre.</p>
-              </div>
-            </div>
-
-            <div class="p-3 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-start gap-2.5">
-              <span class="w-2 h-2 rounded-full bg-amber-500 mt-1.5 shrink-0"></span>
-              <div>
-                <strong class="font-mono text-zinc-900 dark:text-white">select_item (ML Search)</strong>
-                <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">Búsqueda de artículo individual en la tienda de ML (con SKU, marca y nombre).</p>
-              </div>
-            </div>
-
-            <div class="p-3 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-start gap-2.5">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 mt-1.5 shrink-0"></span>
-              <div>
-                <strong class="font-mono text-zinc-900 dark:text-white">generate_lead (WhatsApp Order)</strong>
-                <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">Generación y envío de pedidos y cotizaciones al WhatsApp de ventas.</p>
-              </div>
-            </div>
-
-            <div class="p-3 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-start gap-2.5">
-              <span class="w-2 h-2 rounded-full bg-indigo-500 mt-1.5 shrink-0"></span>
-              <div>
-                <strong class="font-mono text-zinc-900 dark:text-white">add_to_cart</strong>
-                <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">Artículos seleccionados para cotización y armados en pedido.</p>
-              </div>
-            </div>
-
-            <div class="p-3 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-start gap-2.5">
-              <span class="w-2 h-2 rounded-full bg-purple-500 mt-1.5 shrink-0"></span>
-              <div>
-                <strong class="font-mono text-zinc-900 dark:text-white">contact</strong>
-                <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">Consultas directas enviadas por WhatsApp o Correo electrónico.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- How-to Guide Card -->
-        <div class="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400">
-          <strong class="text-zinc-900 dark:text-white block mb-1">💡 ¿Cómo obtener tu ID de Google Analytics 4 gratis?</strong>
-          <ol class="list-decimal list-inside space-y-1 text-[11px]">
-            <li>Ingresá a <a href="https://analytics.google.com/" target="_blank" class="text-yellow-600 dark:text-yellow-400 underline font-bold">analytics.google.com</a> con tu cuenta de Google.</li>
-            <li>Creá una propiedad llamada <strong>"Bertoncini Online"</strong> y agregá un flujo de datos <strong>Web</strong> (ej: tu URL de GitHub Pages o <code>bertoncinionline.com.ar</code>).</li>
-            <li>Copiá el <strong>ID de Medición</strong> (formato <code>G-XXXXXXXXXX</code>) y pegalo en el campo de arriba. ¡Listo!</li>
-          </ol>
-        </div>
-
       </div>
-    `}
-  `;
 
+      <!-- Custom GA4 Events Table -->
+      <div class="p-4 sm:p-6 rounded-3xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+        <h4 class="text-sm font-bold text-zinc-900 dark:text-white mb-1.5 flex items-center gap-2">
+          <i data-lucide="zap" class="w-4 h-4 text-yellow-500"></i>
+          <span>Eventos Globales Automáticos de Bertoncini</span>
+        </h4>
+        <p class="text-xs text-zinc-500 dark:text-zinc-400 mb-4">
+          Cada interacción de los usuarios en cualquier dispositivo se envía automáticamente a Google Analytics:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          
+          <div class="p-3.5 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-start gap-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-blue-500 mt-1 shrink-0"></span>
+            <div>
+              <strong class="font-mono text-zinc-900 dark:text-white text-xs block">page_view</strong>
+              <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">Visitas y navegación del catálogo de todos los usuarios.</p>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-start gap-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500 mt-1 shrink-0"></span>
+            <div>
+              <strong class="font-mono text-zinc-900 dark:text-white text-xs block">select_content (ML Banner)</strong>
+              <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">Clics globales hacia la Tienda Oficial de Mercado Libre.</p>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-start gap-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-500 mt-1 shrink-0"></span>
+            <div>
+              <strong class="font-mono text-zinc-900 dark:text-white text-xs block">select_item (ML Search)</strong>
+              <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">Búsquedas en Mercado Libre por producto (SKU, nombre, marca).</p>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-start gap-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 mt-1 shrink-0"></span>
+            <div>
+              <strong class="font-mono text-zinc-900 dark:text-white text-xs block">generate_lead (WhatsApp Order)</strong>
+              <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">Cotizaciones y pedidos armados y enviados a WhatsApp.</p>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-start gap-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-indigo-500 mt-1 shrink-0"></span>
+            <div>
+              <strong class="font-mono text-zinc-900 dark:text-white text-xs block">add_to_cart</strong>
+              <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">Artículos seleccionados para cotización.</p>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-start gap-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-purple-500 mt-1 shrink-0"></span>
+            <div>
+              <strong class="font-mono text-zinc-900 dark:text-white text-xs block">contact</strong>
+              <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">Consultas directas enviadas por WhatsApp o Correo.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- How-to Guide Card -->
+      <div class="p-4 sm:p-5 rounded-3xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400">
+        <strong class="text-zinc-900 dark:text-white block mb-1.5 text-sm">💡 ¿Cómo vincular Google Analytics 4?</strong>
+        <ol class="list-decimal list-inside space-y-1.5 text-xs">
+          <li>Ingresá a <a href="https://analytics.google.com/" target="_blank" class="text-yellow-600 dark:text-yellow-400 underline font-bold">analytics.google.com</a> con tu cuenta de Google.</li>
+          <li>Creá una propiedad llamada <strong>"Bertoncini Online"</strong> y agregá un flujo de datos <strong>Web</strong> (con tu dominio o URL de GitHub Pages).</li>
+          <li>Copiá el <strong>ID de Medición</strong> (ej: <code>G-XXXXXXXXXX</code>) y pegalo arriba. ¡Todas las visitas y conversiones se registrarán automáticamente!</li>
+        </ol>
+      </div>
+
+    </div>
   lucide.createIcons();
 }
 

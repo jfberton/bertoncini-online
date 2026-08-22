@@ -82,6 +82,21 @@ html:not(.dark) ::-webkit-scrollbar-track {
   background: #FFA000;
 }
 
+/* Hide scrollbar for clean horizontal swipe on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile tap highlight fix */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Glassmorphism Classes */
 .glass-dark {
   background: rgba(15, 18, 22, 0.85);
